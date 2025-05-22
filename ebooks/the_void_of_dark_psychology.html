@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Void of Dark Psychology - Learn powerful psychological techniques to enhance your personal magnetism and attraction skills with this comprehensive ebook.">
+    <title>The Void of Dark Psychology | Cognitifly</title>
+    <link rel="icon" href="../media/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: #000;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    /* Header and Navbar */
+    header {
+        background: #000;
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .logo .highlight {
+        color: #17ef97;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .nav-menu a:hover {
+        color: #17ef97;
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Product Section */
+    .product-section {
+        padding: 10rem 2rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .product-container {
+        display: flex;
+        gap: 3rem;
+        margin-bottom: 4rem;
+    }
+
+    .product-image {
+        flex: 1;
+        max-width: 40%;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(23, 239, 151, 0.15);
+        transition: transform 0.3s ease;
+    }
+
+    .product-image img:hover {
+        transform: scale(1.02);
+    }
+
+    .product-details {
+        flex: 1.5;
+    }
+
+    .breadcrumb {
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: #999;
+    }
+
+    .breadcrumb a {
+        color: #999;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .breadcrumb a:hover {
+        color: #17ef97;
+    }
+
+    .product-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .product-author {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: #ccc;
+    }
+
+    .product-author span {
+        color: #17ef97;
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .stars {
+        color: #FFD700;
+        font-size: 1.2rem;
+    }
+
+    .rating-count {
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    .product-meta {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .meta-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.7rem 1.2rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .meta-item .label {
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    .meta-item .value {
+        font-weight: 600;
+    }
+
+    .product-description {
+        margin-bottom: 2rem;
+        color: #e0e0e0;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .price-container {
+        margin-bottom: 2rem;
+    }
+
+    .price {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #17ef97;
+    }
+
+    .price-note {
+        font-size: 0.9rem;
+        color: #999;
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: #17ef97;
+        color: #000;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(23, 239, 151, 0.3);
+    }
+
+    .cta-btn.primary {
+        background: #17ef97;
+    }
+
+    .cta-btn.secondary {
+        background: linear-gradient(45deg, #17ef97, #00a8ff);
+    }
+
+    .bundle-offer {
+        background: rgba(23, 239, 151, 0.05);
+        border: 1px solid rgba(23, 239, 151, 0.2);
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .bundle-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+
+    .bundle-desc {
+        color: #e0e0e0;
+        margin-bottom: 1.5rem;
+    }
+
+    .bundle-price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #17ef97;
+        margin-bottom: 1rem;
+    }
+
+    .bundle-save {
+        display: inline-block;
+        background: rgba(23, 239, 151, 0.2);
+        color: #17ef97;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-left: 1rem;
+    }
+
+    .features-list {
+        list-style: none;
+        margin-bottom: 2rem;
+    }
+
+    .features-list li {
+        margin-bottom: 0.7rem;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    .features-list li::before {
+        content: "✓";
+        color: #17ef97;
+        font-weight: bold;
+    }
+
+    .divider {
+        height: 1px;
+        background: #333;
+        margin: 3rem 0;
+    }
+
+    /* Related Products */
+    .related-section {
+        padding: 2rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .related-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    .ebook-card {
+        background: #111;
+        color: #fff;
+        padding: 1.5rem;
+        border-radius: 15px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .ebook-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(23, 239, 151, 0.1);
+    }
+
+    .ebook-cover {
+        height: 340px;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+
+    .ebook-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .ebook-card:hover .ebook-cover img {
+        transform: scale(1.05);
+    }
+
+    .ebook-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    min-height: 4.2em; /* Allow more height */
+    overflow: visible; /* Don't cut off overflow text */
+    display: block; /* Remove webkit box display */
+}
+
+    .ebook-card p {
+        color: #17ef97;
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .ebook-card .cta-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    /* Footer */
+    footer {
+        padding: 4rem 2rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .footer-logo a {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        display: inline-block;
+    }
+
+    .footer-brand p {
+        color: #e0e0e0;
+        margin-bottom: 1.5rem;
+        max-width: 350px;
+        font-size: 1rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem 1.2rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 25px 0 0 25px;
+    }
+
+    .newsletter-form button {
+        padding: 0.8rem 1.5rem;
+        background: #17ef97;
+        color: #000;
+        border: none;
+        border-radius: 0 25px 25px 0;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-3px);
+        background-color: #f5f5f5;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        flex: 2;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .footer-column h3 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-column a {
+        color: #999;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.8rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+        color: #17ef97;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        border-top: 1px solid #333;
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+        color: #17ef97;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #000;
+            padding: 1rem;
+            flex-direction: column;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .product-container {
+            flex-direction: column;
+        }
+
+        .product-image {
+            max-width: 100%;
+        }
+
+        .related-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-top {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-brand {
+            width: 100%;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .footer-column {
+            width: 100%;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .footer-bottom p {
+            text-align: center;
+        }
+        
+        .footer-bottom-links {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .ebook-cover {
+        height: 435px;
+    }
+    }
+    </style>
+
+<script type="text/javascript">
+    window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
+    heap.load("3034367105");
+  </script>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="https://www.cognitifly.com/">cogniti<span class="highlight">fly</span></a></div>
+            <div class="hamburger">☰</div>
+            <div class="nav-menu">
+                <a href="https://www.cognitifly.com/">Home</a>
+                <a href="../index.html#ebooks">Books</a>
+                <a href="../info/about-us.html">About</a>
+                <a href="../info/contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Section -->
+    <section class="product-section">
+        <div class="product-container">
+            <div class="product-image">
+                <img src="../media/cover/1-coll-6.webp" alt="The Void of Dark Psychology">
+            </div>
+            <div class="product-details">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a> / <a href="../index.html#ebooks">Books</a> / The Void of Dark Psychology
+                </div>
+                <h1 class="product-title">The Void of Dark Psychology</h1>
+                <p class="product-author">By <span>Helene Meyer</span></p>
+                
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                    <div class="rating-count">4.7/5 (29,000+ downloads)</div>
+                </div>
+                
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <span class="label">Pages:</span>
+                        <span class="value">250</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="label">Formats:</span>
+                        <span class="value">PDF, EPUB, MOBI</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="label">Published:</span>
+                        <span class="value">2025</span>
+                    </div>
+                </div>
+                
+                <p class="product-description">
+                    Dive into the captivating world of “The Void of Dark Psychology” with our revolutionary ebook! <br> <br>
+
+Have you ever wondered how some people manage to arouse irresistible obsession and desire in others? The answer lies in unraveling the secrets behind these charm techniques, strategies that you can now learn and apply.
+
+This book is not simply a guide, it is a strategic journey based on deep understanding of dark psychology and seduction, presented in a captivating way so that you can use these techniques and become a master of charm. <br> <br>
+
+Inside the Ebook: <br> <br>
+
+<span style="font-weight: bold;">1. Discover the Secrets of Dark Psychology:</span> Learn how unraveling the secrets of charm can be the key to arousing an obsession and desire that captures and holds anyone’s attention. <br><br>
+
+<span style="font-weight: bold;">2. The Art of Generating Desire:</span> Discover specific techniques to perfect the art of generating desire using non ethical ways, allowing you to create an attraction that leaves everyone captivated and yearning for more. <br><br>
+
+<span style="font-weight: bold;">3. The Myth of “No”: Reprogram Rejection and Turn It into Attraction:</span> Turn every “no” into an opportunity to make a stronger impact. Learn techniques for handling rejection gracefully and how, in many cases, to use it as a springboard to a more intense attraction. <br><br>
+
+<span style="font-weight: bold;">4. The Impact of Emotional Connections:</span> Discover how to create deep emotional connections that will last in the memory of those around you, making you stand out in any situation. <br><br>
+
+<span style="font-weight: bold;">5. Invisible Status: How to Dominate Without Seeming to Try:</span> Harness the power of implicit status. Discover how certain gestures, decisions, and attitudes communicate power without having to directly demonstrate it. Less is more… and you'll be unforgettable. <br> <br>
+
+And much more! With this ebook, you will not only learn the techniques to generate obsession and desire, but you will learn how to apply them in an ethical and non ethical and captivating ways. Ready to unleash the power of dark psychology and become an irresistible presence? Click "BUY NOW" now and acquire the definitive guide that will transform your ability to generate desire and obsession!</p>
+                
+                <div class="price-container">
+                    <div class="price">$39.00 USD</div>
+                    <p class="price-note">One-time payment, instant download</p>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="../checkout/checkout-6-the-void-of-dark-psychology.html" class="cta-btn primary">BUY NOW</a>
+                </div>
+                
+                <div class="bundle-offer">
+                    <h3 class="bundle-title">WANT FULL ACCESS?</h3>
+                    <p class="bundle-desc">Get our complete collection of 6 eBooks for only $49 USD (One-time payment, Lifetime Access to future eBooks and save +80%)</p>
+                    <div class="bundle-price">$49.00 USD <span class="bundle-save">SAVE 80%</span></div>
+                    <a href="../checkout/checkout-7-full-access.html" class="cta-btn secondary">GET FULL ACCESS</a>
+                </div>
+                
+                <ul class="features-list">
+                    <li>Instant digital delivery</li>
+                    <li>Compatible with all devices</li>
+                    <li>Updates and access to new content FOR LIFE!</li>
+                    <li>30-day money-back guarantee</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <!-- Related Products -->
+        <div class="related-section">
+            <h2 class="section-title">Related Books You Might Like</h2>
+            <div class="related-grid">
+                <div class="ebook-card">
+                    <div class="ebook-cover">
+                        <img src="../media/cover/1-coll-1.webp" alt="Neuro Codex">
+                    </div>
+                    <h3>Neuro Codex</h3>
+                    <p>$39.00</p>
+                    <a href="neuro_codex.html" class="cta-btn">Read More</a>
+                </div>
+                <div class="ebook-card">
+                    <div class="ebook-cover">
+                        <img src="../media/cover/1-coll-2.webp" alt="Forbidden Techniques of Control and Attracting People">
+                    </div>
+                    <h3>Forbidden Techniques of Control and Attracting People</h3>
+                    <p>$39.00</p>
+                    <a href="forbidden_techniques_of_control_and_attracting_people.html" class="cta-btn">Read More</a>
+                </div>
+                <div class="ebook-card">
+                    <div class="ebook-cover">
+                        <img src="../media/cover/1-coll-3.webp" alt="Cognitive Manipulation to Attract Anyone">
+                    </div>
+                    <h3>Cognitive Manipulation to Attract Anyone</h3>
+                    <p>$39.00</p>
+                    <a href="cognitive_manipulation_to_attract_anyone.html" class="cta-btn">Read More</a>
+                </div>
+                <div class="ebook-card">
+                    <div class="ebook-cover">
+                        <img src="../media/cover/1-coll-5.webp" alt="Become The Unforgettable Love of Whoever you Want">
+                    </div>
+                    <h3>Become The Unforgettable Love of Whoever you Want</h3>
+                    <p>$39.00</p>
+                    <a href="become_the_unforgettable_love_of_whoever_you_want.html" class="cta-btn">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo footer-logo"><a href="#">cogniti<span class="highlight">fly</span></a></div>
+                <p>Subscribe to our newsletter and receive news and special discounts!</p>
+
+
+                <form action="https://formspree.io/f/mldjjeld" method="POST" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter Email Address..." required>
+                    <button type="submit">Submit</button>
+                </form>
+
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/HarperCollins/"><img src="../media/logos/facebook.svg" alt="Facebook"></a>
+                    <a href="https://x.com/harpercollins"><img src="../media/logos/x.svg" alt="X"></a>
+                    <a href="https://www.instagram.com/HarperCollins/"><img src="../media/logos/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@harpercollins"><img src="../media/logos/tiktok.svg" alt="TikTok"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <a href="../index.html#ebooks">Library</a>
+                    <a href="../index.html#ebooks">Collections</a>
+                    <a href="../info/authors.html">Authors</a>
+                    <!-- <a href="#ebooks">Art</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <a href="../info/contact.html">Help Center</a>
+                    <!-- <a href="#">Site Status</a> -->
+                    <a href="../info/contact.html">Billing</a>
+                    <a href="../info/guides.html">Guides</a>
+                    <!-- <a href="#">Blog</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="../info/about-us.html">About Us</a>
+                    <a href="../info/jobs.html">Careers</a>
+                    <a href="../info/contact.html">Affiliate Program</a>
+                    
+                </div>
+                <div class="footer-column">
+                    <h3>Preferences</h3>
+                    <a href="../info/terms-of-use.html">Terms of Use</a>
+                    <a href="../info/privacy-policy.html">Privacy Policy</a>
+                    <!-- <a href="#ebooks">Bookmarks</a> -->
+                    <!-- <a href="#ebooks">Watchlist</a> -->
+                    <!-- <a href="#ebooks">My Collections</a> -->
+                    <a href="../info/contact.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>help@cognitifly.com</p>
+            <p>&copy; 2025 Cognitifly LLC. All rights reserved.</p>
+            <p>A HarperCollins Company</p>
+            <div class="footer-bottom-links">
+                <a href="../info/terms-of-use.html">Terms of Use</a>
+                <a href="../info/privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    });
+    </script>
+</body>
+</html>

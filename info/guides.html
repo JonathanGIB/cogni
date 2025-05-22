@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Payment Guide - Cognitifly</title>
+    <meta name="description" content="Learn how to make payments with USDC using the Ethereum network at Cognitifly. Step-by-step guide for beginners.">
+    <link rel="icon" href="../media/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: #000;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    /* Header and Navbar */
+    header {
+        background: #000;
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .logo .highlight {
+        color: #17ef97;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .nav-menu a:hover {
+        color: #17ef97;
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Guide Sections */
+    .guide-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10rem 2rem 4rem;
+    }
+
+    .guide-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .guide-header h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .guide-header h1 .highlight {
+        color: #17ef97;
+    }
+
+    .guide-header p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #e0e0e0;
+    }
+
+    .guide-intro {
+        background: linear-gradient(145deg, rgba(23, 239, 151, 0.1), rgba(23, 239, 151, 0.05));
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        border: 1px solid rgba(23, 239, 151, 0.2);
+    }
+
+    .guide-intro h2 {
+        color: #17ef97;
+        margin-bottom: 1rem;
+    }
+
+    .guide-intro p {
+        margin-bottom: 1rem;
+    }
+
+    .guide-notice {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-left: 4px solid #17ef97;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .guide-notice strong {
+        color: #17ef97;
+    }
+
+    .steps-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .step-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 15px;
+        padding: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .step-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .step-number {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(23, 239, 151, 0.2);
+        color: #17ef97;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .step-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        padding-right: 50px;
+    }
+
+    .step-card p {
+        margin-bottom: 1rem;
+        color: #e0e0e0;
+    }
+
+    .step-card .tip {
+        background-color: rgba(23, 239, 151, 0.1);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        border-left: 3px solid #17ef97;
+    }
+
+    .step-card .tip strong {
+        color: #17ef97;
+    }
+
+    .step-card ul {
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+    }
+
+    .step-card ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    .step-image-container {
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 1.5rem 0;
+        border: 1px solid rgba(23, 239, 151, 0.3);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .step-image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .step-image-caption {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #999;
+        padding: 0.5rem;
+    }
+
+    .crypto-address {
+        background: #111;
+        padding: 1rem;
+        border-radius: 8px;
+        font-family: monospace;
+        font-size: 1rem;
+        color: #17ef97;
+        margin: 1rem 0;
+        border: 1px dashed rgba(23, 239, 151, 0.3);
+        position: relative;
+        word-break: break-all;
+    }
+
+    .copy-btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: rgba(23, 239, 151, 0.2);
+        color: #17ef97;
+        border: none;
+        border-radius: 4px;
+        padding: 0.3rem 0.7rem;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: background 0.3s ease;
+    }
+
+    .copy-btn:hover {
+        background: rgba(23, 239, 151, 0.4);
+    }
+
+    .important-note {
+        background: linear-gradient(145deg, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.05));
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 2rem 0;
+        border: 1px solid rgba(255, 107, 107, 0.3);
+    }
+
+    .important-note h3 {
+        color: #ff6b6b;
+        margin-bottom: 1rem;
+    }
+
+    .important-note ul {
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+    }
+
+    .important-note li {
+        margin-bottom: 0.5rem;
+    }
+
+    .summary-section {
+        background: linear-gradient(145deg, rgba(23, 239, 151, 0.1), rgba(0, 0, 0, 0));
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 3rem 0;
+        text-align: center;
+    }
+
+    .summary-section h2 {
+        color: #17ef97;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        padding: 0.9rem 2.2rem;
+        background: #17ef97;
+        color: #000;
+        text-decoration: none;
+        border-radius: 25px;
+        margin-top: 1.5rem;
+        transition: transform 0.3s ease;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .cta-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .faq-section {
+        margin: 3rem 0;
+    }
+
+    .faq-item {
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 1.5rem;
+    }
+
+    .faq-question {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+        color: #17ef97;
+    }
+
+    .faq-answer {
+        color: #e0e0e0;
+    }
+
+    /* Footer Styles */
+    footer {
+        padding: 4rem 2rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .footer-logo a {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .footer-brand p {
+        color: #e0e0e0;
+        margin-bottom: 1.5rem;
+        max-width: 350px;
+        font-size: 1rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem 1.2rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 25px 0 0 25px;
+    }
+
+    .newsletter-form button {
+        padding: 0.8rem 1.5rem;
+        background: #17ef97;
+        color: #000;
+        border: none;
+        border-radius: 0 25px 25px 0;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover img {
+        transform: translateY(-3px);
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        flex: 2;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .footer-column h3 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-column a {
+        color: #999;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.8rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+        color: #17ef97;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        border-top: 1px solid #333;
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+        color: #17ef97;
+    }
+
+    .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-3px);
+        background-color: #f5f5f5;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #000;
+            padding: 1rem;
+            flex-direction: column;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .guide-header h1 {
+            font-size: 2.2rem;
+        }
+
+        .step-card {
+            padding: 1.5rem;
+        }
+
+        .footer-top {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-brand {
+            width: 100%;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .footer-column {
+            width: 100%;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .footer-bottom p {
+            text-align: center;
+        }
+        
+        .footer-bottom-links {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    </style>
+
+<script type="text/javascript">
+    window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
+    heap.load("3034367105");
+  </script>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="https://www.cognitifly.com">cogniti<span class="highlight">fly</span></a></div>
+            <div class="hamburger">☰</div>
+            <div class="nav-menu">
+                <a href="https://www.cognitifly.com/">Home</a>
+                <a href="../index.html#ebooks">Books</a>
+                <a href="about-us.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Guide Content -->
+    <div class="guide-container">
+        <div class="guide-header">
+            <h1>Crypto Payment <span class="highlight">Guide</span></h1>
+            <p>A step-by-step tutorial on how to pay for your eBooks using USDC on the Ethereum Network</p>
+        </div>
+
+        <div class="guide-intro">
+            <h2>Introduction to Crypto Payments</h2>
+            <p>Welcome to our comprehensive guide on making payments with cryptocurrencies. For your convenience, we accept USDC (USD Coin) payments on the Ethereum network. USDC is a stablecoin that is pegged to the US dollar, meaning one USDC is always worth approximately one US dollar.</p>
+            <p>For practical reasons, this guide demonstrates the process using Binance, one of the world's most popular cryptocurrency exchanges. However, you are free to use any exchange of your choice such as MoonPay, Coinbase, Crypto.com, etc., as the process is similar across most platforms.</p>
+            
+            <div class="guide-notice">
+                <strong>Note:</strong> If you already have a Binance account with USDC available, you can skip directly to <strong>Step 5: Withdrawing USDC</strong>.
+            </div>
+        </div>
+
+        <div class="steps-container">
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Create a Binance Account</h3>
+                <p>First, you'll need to sign up for an account on the Binance platform if you don't already have one.</p>
+                
+                <ul>
+                    <li>Navigate to <a href="https://www.binance.com" style="color: #17ef97; text-decoration: underline;">Binance.com</a> in your web browser (Depending on your country of residence, Binance may show you a link that will redirect you to your country's specific Binance page, for example Binance for US customers, Binance for EU customers, Binance for UK customers). You can also download the mobile app from your device's app store.</li>
+                    <li>Click on the "Register" button in the top-right corner</li>
+                    <li>Choose to register with either your email address or phone number</li>
+                    <li>Create a strong password that includes a mix of letters, numbers, and special characters</li>
+                    <li>Check the Terms of Service box and click "Create Account"</li>
+                    <li>Complete the verification process by entering the code sent to your email or phone</li>
+                </ul>
+
+                <!-- <div class="step-image-container">
+                    Placeholder for image
+                    <div style="background-color: #222; padding: 2rem; text-align: center;">
+                        <p style="color: #17ef97;">[Image: Binance registration screen]</p>
+                    </div>
+                    <div class="step-image-caption">Registration page on Binance.com</div>
+                </div> -->
+
+                <div class="tip">
+                    <strong>Tip:</strong> Make sure to use a secure, unique password for your Binance account and enable Two-Factor Authentication (2FA) for added security.
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Complete KYC Verification</h3>
+                <p>Before you can buy or transfer cryptocurrencies, you'll need to complete Binance's Know Your Customer (KYC) verification process.</p>
+                
+                <ul>
+                    <li>Log in to your Binance account</li>
+                    <li>Navigate to the "Identification" or "Identity Verification" section</li>
+                    <li>Select "Personal" account type</li>
+                    <li>Fill out your personal information including full name, date of birth, and address</li>
+                    <li>Upload a clear photo of your valid government-issued ID (passport, driver's license, or ID card)</li>
+                    <li>Take a selfie or complete the face verification process</li>
+                    <li>Submit your verification documents and wait for approval (usually takes 1-30 minutes, but can take longer during busy periods)</li>
+                </ul>
+
+              <!--  <div class="step-image-container">
+                     Placeholder for image 
+                    <div style="background-color: #222; padding: 2rem; text-align: center;">
+                        <p style="color: #17ef97;">[Image: KYC verification screens]</p>
+                    </div>
+                    <div class="step-image-caption">KYC verification process on Binance</div>
+                </div> -->
+
+                <div class="tip">
+                    <strong>Tip:</strong> Make sure your ID document is fully visible, well-lit, and all text is clearly legible to avoid delays in the verification process.
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Fund Your Binance Account</h3>
+                <p>Once your account is verified, you'll need to deposit funds to purchase USDC.</p>
+                
+                <ul>
+                    <li>Log in to your Binance account</li>
+                    <li>Click on "Wallet" in the top navigation menu, then select "Fiat and Spot"</li>
+                    <li>Click the "Deposit" button</li>
+                    <li>Choose your preferred deposit method:
+                        <ul>
+                            <li>Bank transfer</li>
+                            <li>Credit/debit card</li>
+                            <li>Third-party payment providers</li>
+                        </ul>
+                    </li>
+                    <li>Follow the on-screen instructions to complete your deposit</li>
+                    <li>Wait for your deposit to be confirmed and credited to your account</li>
+                </ul>
+
+                <!-- <div class="step-image-container">
+                     Placeholder for image 
+                    <div style="background-color: #222; padding: 2rem; text-align: center;">
+                        <p style="color: #17ef97;">[Image: Deposit funds screen]</p>
+                    </div>
+                    <div class="step-image-caption">Deposit funds page on Binance</div>
+                </div> -->
+
+                <div class="tip">
+                    <strong>Tip:</strong> Bank transfers typically have zero or very low fees, but processing can take longer. Credit/debit card deposits are usually instant, but carry slightly higher fees.
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Purchase USDC</h3>
+                <p>Now that you have funds in your Binance account, you can purchase USDC.</p>
+                
+                <ul>
+                    <li>From your Binance dashboard, click on "Trade" and select "Spot Trading"</li>
+                    <li>In the search bar, type "USDC" and select a trading pair with your currency, such as USDC/USD or USDC/EUR</li>
+                    <li>Enter the amount of USDC you wish to purchase</li>
+                    <li>Review the transaction details, including the price and fees</li>
+                    <li>Click "Buy USDC" to complete your purchase</li>
+                    <li>Confirm the transaction when prompted</li>
+                </ul>
+
+              <!--  <div class="step-image-container">
+                     Placeholder for image 
+                    <div style="background-color: #222; padding: 2rem; text-align: center;">
+                        <p style="color: #17ef97;">[Image: USDC purchase screen]</p>
+                    </div>
+                    <div class="step-image-caption">USDC purchase interface on Binance</div>
+                </div> -->
+
+                <div class="tip">
+                    <strong>Tip:</strong> You can also use the "Convert" feature on Binance for a simpler way to buy USDC. Simply select the currency you want to convert from, enter the amount, and select USDC as the target currency.
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <h3>Withdraw USDC to Pay for Your eBook</h3>
+                <p>Now that you have USDC in your Binance account, you'll need to withdraw it to pay for your eBook from Cognitifly.</p>
+                
+                <ul>
+                    <li>Navigate to "Wallet" and then "Fiat and Spot" in your Binance account</li>
+                    <li>Find USDC in your asset list and click the "Withdraw" button</li>
+                    <li>Enter the withdrawal amount (the total price of your eBook)</li>
+                    <li>In the "Address" field, paste our Cognitifly payment address:</li>
+                </ul>
+
+                <div class="crypto-address">
+                    0x9e7A29277280221560<br>cf014Ad36151C9384b2060
+                    <button class="copy-btn" onclick="copyToClipboard('0x9e7A29277280221560cf014Ad36151C9384b2060')">Copy</button>
+                </div>
+
+                <ul>
+                    <li>For "Network", select <strong>Ethereum</strong></li>
+                    <li>Double-check that you have selected Ethereum as the network - this is crucial!</li>
+                    <li>Review all details carefully before proceeding</li>
+                    <li>Click "Withdraw/Send" to proceed</li>
+                    <li>Complete any security verifications required (email code, 2FA, etc.)</li>
+                    <li>Save the transaction ID (TxID) for your records and for verification purposes</li>
+                </ul>
+
+                <!-- <div class="step-image-container">
+                     Placeholder for image 
+                    <div style="background-color: #222; padding: 2rem; text-align: center;">
+                        <p style="color: #17ef97;">[Image: USDC withdrawal screen with network selection]</p>
+                    </div>
+                    <div class="step-image-caption">USDC withdrawal page highlighting the BNB Smart Chain (BEP20) network selection</div>
+                </div> -->
+
+                <div class="tip">
+                    <strong>Tip:</strong> Always double-check the wallet address before confirming any cryptocurrency transaction. Once confirmed, transactions cannot be reversed.
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <h3>Record Your Transaction ID (TxID)</h3>
+                <p>After your withdrawal is processed, you'll receive a transaction ID (TxID) that serves as your payment receipt.</p>
+                
+                <ul>
+                    <li>Once your withdrawal is processed, Binance will provide a transaction ID (TxID)</li>
+                    <li>Copy this ID and save it securely</li>
+                    <li>You can view your transaction history in the "Wallet" section under "Transaction History"</li>
+                    <li>Include this TxID when completing your order on Cognitifly to help us verify your payment</li>
+                </ul>
+
+                <!-- <div class="step-image-container">
+                     Placeholder for image
+                    <div style="background-color: #222; padding: 2rem; text-align: center;">
+                        <p style="color: #17ef97;">[Image: Transaction history screen showing TxID]</p>
+                    </div>
+                    <div class="step-image-caption">Transaction history page showing where to find your TxID</div>
+                </div> -->
+
+                <div class="tip">
+                    <strong>Tip:</strong> After confirming payment, you can download your files either by clicking the download button or by sending your TxID to customers@cognitifly.com
+                </div>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <h3>Important Reminders</h3>
+            <ul>
+                <li><strong>Always use the Ethereum network</strong> when sending USDC to our wallet adress. Using the wrong network may result in permanent loss of funds.</li>
+                <li>Double-check our wallet address before confirming any transaction.</li>
+                <li>Keep your transaction ID (TxID) for reference and verification purposes.</li>
+                <li>Cryptocurrency transactions are generally irreversible, so please verify all details before confirming.</li>
+                <li>Payments typically reflect in our system within 1-3 minutes, but may take longer during periods of network congestion.</li>
+                <li>If you have more questions about crypto payments, you can find complete guides tailored to your region, device, or operating system on platforms like YouTube, where you can follow step-by-step instructions on how to create an account on your favorite exchange, verify your account, buy and transfer USDC, and more. You can also contact us at help@cognitifly.com to clarify any questions you may have!</li>
+            </ul>
+        </div>
+
+        <div class="summary-section">
+            <h2>Ready to Make Your Purchase?</h2>
+            <p>Now that you know how to make payments using USDC on the Ethereum Network, you're ready to purchase your favorite eBooks from our collection.</p>
+            <a href="../index.html#ebooks" class="cta-btn">Explore eBooks</a>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">What is USDC?</div>
+                <div class="faq-answer">USDC (USD Coin) is a stablecoin pegged to the US dollar, meaning 1 USDC is designed to maintain a value equivalent to 1 USD. It offers the advantages of cryptocurrencies (fast transfers, low fees, blockchain security) while avoiding the price volatility common with other cryptocurrencies like Bitcoin. You'll always get 1 USD for every 1 USDC and vice versa!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Why do I need to use the Ethereum network specifically?</div>
+                <div class="faq-answer">We require the Ethereum network for USDC transfers because it offers significantly lower transaction fees compared to some other networks like TRON. This ensures that you're not paying excessive fees on your purchase. If you prefer to use other networks, you can contact us at customers@cognitifly.com</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How long does it take for my payment to be processed?</div>
+                <div class="faq-answer">Typically, payments on the Ethereum Chain are processed within 1-3 minutes. Once the transaction is confirmed on the blockchain, our system will verify your payment and grant you access to your purchased eBook(s). During periods of high network congestion, this may take longer.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What if I sent my payment using the wrong network?</div>
+                <div class="faq-answer">Unfortunately, if you send USDC using a network other than Ethereum, we may not be able to receive your funds. In such cases, please contact our support team immediately at help@cognitifly.com with your transaction details, and we'll do our best to assist you.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I use a different cryptocurrency for payment?</div>
+                <div class="faq-answer">Currently, we only accept USDC on the Ethereum Chain for cryptocurrency payments. This helps us maintain stable pricing and efficient processing. If you'd like us to add other payment methods to your purchases in the future, you can email us at customers@cognitifly.com</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I contact support if I have issues with my payment?</div>
+                <div class="faq-answer">If you encounter any issues with your crypto payment, please email us at help@cognitifly.com with your transaction ID (TxID) and a description of the issue. Our support team will assist you as soon as possible.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo footer-logo"><a href="#">cogniti<span class="highlight">fly</span></a></div>
+                <p>Subscribe to our newsletter and receive news and special discounts!</p>
+
+
+                <form action="https://formspree.io/f/mldjjeld" method="POST" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter Email Address..." required>
+                    <button type="submit">Submit</button>
+                </form>
+
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/HarperCollins/"><img src="../media/logos/facebook.svg" alt="Facebook"></a>
+                    <a href="https://x.com/harpercollins"><img src="../media/logos/x.svg" alt="X"></a>
+                    <a href="https://www.instagram.com/HarperCollins/"><img src="../media/logos/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@harpercollins"><img src="../media/logos/tiktok.svg" alt="TikTok"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <a href="../index.html#ebooks">Library</a>
+                    <a href="../index.html#ebooks">Collections</a>
+                    <a href="authors.html">Authors</a>
+                    <!-- <a href="#ebooks">Art</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <a href="contact.html">Help Center</a>
+                    <!-- <a href="#">Site Status</a> -->
+                    <a href="contact.html">Billing</a>
+                    <a href="guides.html">Guides</a>
+                    <!-- <a href="#">Blog</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="about-us.html">About Us</a>
+                    <a href="jobs.html">Careers</a>
+                    <a href="contact.html">Affiliate Program</a>
+                    
+                </div>
+                <div class="footer-column">
+                    <h3>Preferences</h3>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <!-- <a href="#ebooks">Bookmarks</a> -->
+                    <!-- <a href="#ebooks">Watchlist</a> -->
+                    <!-- <a href="#ebooks">My Collections</a> -->
+                    <a href="contact.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>help@cognitifly.com</p>
+            <p>&copy; 2025 Cognitifly LLC. All rights reserved.</p>
+            <p>A HarperCollins Company</p>
+            <div class="footer-bottom-links">
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Copy to clipboard function
+        window.copyToClipboard = function(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                const copyBtn = document.querySelector('.copy-btn');
+                copyBtn.textContent = 'Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = 'Copy';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Unable to copy text: ', err);
+            });
+        }
+    });
+    </script>
+</body>
+</html>

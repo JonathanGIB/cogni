@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Cognitifly</title>
+    <link rel="icon" href="../media/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: #000;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    /* Header and Navbar */
+    header {
+        background: #000;
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .logo .highlight {
+        color: #17ef97;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .nav-menu a:hover {
+        color: #17ef97;
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Careers Hero Section */
+    .careers-hero {
+        padding: 10rem 2rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .careers-hero h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    .careers-hero span.highlight {
+        color: #17ef97;
+    }
+
+    .careers-hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        color: #f0f0f0;
+    }
+
+    /* Jobs Section */
+    .jobs-section {
+        padding: 2rem 2rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .jobs-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+    }
+
+    .job-card {
+        background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+        border-radius: 16px;
+        padding: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #222;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .job-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: #17ef97;
+        transition: width 0.3s ease;
+    }
+
+    .job-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(23, 239, 151, 0.1);
+        border-color: #17ef97;
+    }
+
+    .job-card:hover::before {
+        width: 7px;
+    }
+
+    .job-type {
+        display: inline-block;
+        background: rgba(23, 239, 151, 0.1);
+        color: #17ef97;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .job-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+
+    .job-description {
+        margin-bottom: 1.5rem;
+        color: #e0e0e0;
+    }
+
+    .skills-section h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        color: #17ef97;
+    }
+
+    .skills-list {
+        list-style: none;
+        margin-bottom: 1.5rem;
+    }
+
+    .skills-list li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+        color: #ccc;
+    }
+
+    .skills-list li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #17ef97;
+    }
+
+    .apply-btn {
+        display: inline-block;
+        padding: 0.9rem 2rem;
+        background: transparent;
+        color: #17ef97;
+        text-decoration: none;
+        border: 2px solid #17ef97;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+
+    .apply-btn:hover {
+        background: #17ef97;
+        color: #000;
+        transform: scale(1.05);
+    }
+
+    /* Why Join Us Section */
+    .why-join-section {
+        padding: 4rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+        border-radius: 16px;
+        margin-bottom: 4rem;
+    }
+
+    .why-join-section h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .why-join-section span.highlight {
+        color: #17ef97;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .benefit-card {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+        border: 1px solid #222;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-5px);
+        border-color: #17ef97;
+    }
+
+    .benefit-card h3 {
+        font-size: 1.3rem;
+        color: #17ef97;
+        margin-bottom: 1rem;
+    }
+
+    .benefit-card p {
+        color: #e0e0e0;
+    }
+
+    /* Testimonials Section */
+    .careers-testimonials {
+        padding: 2rem 2rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .careers-testimonials h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .testimonial-card {
+        background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid #222;
+        position: relative;
+    }
+
+    .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-size: 4rem;
+        color: rgba(23, 239, 151, 0.1);
+        font-family: Georgia, serif;
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        color: #e0e0e0;
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+    }
+
+    .testimonial-author {
+        text-align: right;
+        color: #17ef97;
+        font-weight: 600;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: 4rem 2rem;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+        text-align: center;
+        background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+        border-radius: 16px;
+        border: 1px solid #222;
+    }
+
+    .cta-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-section p {
+        color: #e0e0e0;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: #17ef97;
+        color: #000;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: transform 0.3s ease;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .cta-btn:hover {
+        transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+        padding: 4rem 2rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .footer-logo a {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .footer-brand p {
+        color: #e0e0e0;
+        margin-bottom: 1.5rem;
+        max-width: 350px;
+        font-size: 1rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem 1.2rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 25px 0 0 25px;
+    }
+
+    .newsletter-form button {
+        padding: 0.8rem 1.5rem;
+        background: #17ef97;
+        color: #000;
+        border: none;
+        border-radius: 0 25px 25px 0;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-3px);
+        background-color: #f5f5f5;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        flex: 2;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .footer-column h3 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-column a {
+        color: #999;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.8rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+        color: #17ef97;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        border-top: 1px solid #333;
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+        color: #17ef97;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 992px) {
+        .benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #000;
+            padding: 1rem;
+            flex-direction: column;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .benefits-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-top {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-brand {
+            width: 100%;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .footer-column {
+            width: 100%;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            text-align: center;
+        }
+        
+        .footer-bottom-links {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    </style>
+
+<script type="text/javascript">
+    window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
+    heap.load("3034367105");
+  </script>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="https://www.cognitifly.com">cogniti<span class="highlight">fly</span></a></div>
+            <div class="hamburger">☰</div>
+            <div class="nav-menu">
+                <a href="https://www.cognitifly.com/">Home</a>
+                <a href="../index.html#ebooks">Books</a>
+                <a href="about-us.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Careers Hero Section -->
+    <section class="careers-hero">
+        <h1>Join Our <span class="highlight">Team</span></h1>
+        <p>At Cognitifly, we're transforming how people access and experience knowledge through our premium eBooks. We're looking for passionate, creative, and driven individuals to help us continue our mission of empowering minds worldwide.</p>
+        <p>If you're ready to be part of a dynamic team where innovation meets impact, explore our open positions below.</p>
+    </section>
+
+    <!-- Jobs Section -->
+    <section class="jobs-section">
+        <div class="jobs-grid">
+            <div class="job-card">
+                <span class="job-type">REMOTE</span>
+                <h3>Community Manager</h3>
+                <div class="job-description">
+                    <p>As our Community Manager, you'll be the voice and face of Cognitifly across all social platforms. You'll build relationships with our readers, create engaging content, and help grow our online presence while maintaining our brand identity.</p>
+                </div>
+                <div class="skills-section">
+                    <h4>Key Requirements:</h4>
+                    <ul class="skills-list">
+                        <li>Advanced handling of social media platforms (Facebook, Twitter, Instagram, LinkedIn, TikTok, etc.)</li>
+                        <li>Skills for metrics analysis</li>
+                        <li>Knowledge of digital marketing strategies and social media advertising</li>
+                        <li>Excellent written and verbal communication skills</li>
+                        <li>Creative writing and storytelling skills</li>
+                    </ul>
+                </div>
+                <a href="mailto:partners@cognitifly.com" class="apply-btn">Share Your Resume</a>
+            </div>
+
+            <div class="job-card">
+                <span class="job-type">REMOTE</span>
+                <h3>Chat Support Specialist</h3>
+                <div class="job-description">
+                    <p>The Chat Support Specialist will be responsible for providing exceptional customer support via live chat. This role involves addressing customer queries, resolving issues, and ensuring a high level of customer satisfaction.</p>
+                </div>
+                <div class="skills-section">
+                    <h4>Key Requirements:</h4>
+                    <ul class="skills-list">
+                        <li>Excellent communication skills</li>
+                        <li>Friendly demeanor and patience</li>
+                        <li>Ability to handle multiple chats simultaneously</li>
+                        <li>Problem-solving mindset</li>
+                        <li>Experience with customer service tools and platforms</li>
+                    </ul>
+                </div>
+                <a href="mailto:partners@cognitifly.com" class="apply-btn">Share Your Resume</a>
+            </div>
+
+            <div class="job-card">
+                <span class="job-type">REMOTE</span>
+                <h3>Data Analyst</h3>
+                <div class="job-description">
+                    <p>The Data Analyst will be a key technical contributor within the Data Analytics function of the Customer Care Operations organization. You will demonstrate deep expertise in querying, structuring, and visualizing actionable data to drive operational improvements for customer success.</p>
+                </div>
+                <div class="skills-section">
+                    <h4>Technical Skills:</h4>
+                    <ul class="skills-list">
+                        <li>Databases</li>
+                        <li>Spreadsheets</li>
+                        <li>Statistics</li>
+                        <li>Data visualization tools, preferably MS Power BI, Google Looker</li>
+                        <li>Data manipulation and processing, preferably in SQL</li>
+                    </ul>
+                    <h4>Additional Requirements:</h4>
+                    <ul class="skills-list">
+                        <li>Understanding of relevant KPIs and processes</li>
+                        <li>Passion for solving highly technical business problems through effective data manipulation and visualization</li>
+                        <li>Ability to thrive in a fast-paced environment</li>
+                        <li>Eagerness to tackle diverse data projects</li>
+                    </ul>
+                </div>
+                <a href="mailto:partners@cognitifly.com" class="apply-btn">Share Your Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Us Section -->
+    <section class="why-join-section">
+        <h2>Why Join <span class="highlight">Cognitifly</span></h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Flexible Working</h3>
+                <p>Enjoy the freedom of remote work with flexible hours that fit your lifestyle and productivity patterns.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Growth Opportunities</h3>
+                <p>Continuous learning, professional development, and career advancement in a rapidly growing company.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Collaborative Culture</h3>
+                <p>Work with a diverse, talented team passionate about transforming knowledge accessibility.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Competitive Pay</h3>
+                <p>Attractive compensation packages that recognize your skills, experience, and contributions.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Work-Life Balance</h3>
+                <p>We value your personal time and well-being with policies designed to prevent burnout.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Global Reach</h3>
+                <p>Be part of a team making an impact on readers and learners across the world.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="careers-testimonials">
+        <h2>Employee <span class="highlight">Stories</span></h2>
+        <div class="testimonial-card">
+            <p class="testimonial-text">Joining Cognitifly was the best career decision I've made. The remote work setup gives me the flexibility I need, while the team's collaborative spirit keeps me connected and engaged. I've grown more professionally in one year here than in my previous five years combined.</p>
+            <p class="testimonial-author">- Sophia Chen, Data Analyst</p>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">What I love most about working at Cognitifly is the culture of innovation. Everyone is encouraged to share ideas and take initiative. As a Community Manager, I feel my work directly impacts our readers and helps build meaningful connections with our audience.</p>
+            <p class="testimonial-author">- Marcus Johnson, Community Manager</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to <span class="highlight">Join Us</span>?</h2>
+        <p>Can't find a role that matches your skills? We're always looking for talented individuals to join our team. Send your resume to partners@cognitifly.com and tell us how you can contribute to Cognitifly's mission.</p>
+        <a href="mailto:partners@cognitifly.com" class="cta-btn">Connect With Us</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo footer-logo"><a href="#">cogniti<span class="highlight">fly</span></a></div>
+                <p>Subscribe to our newsletter and receive news and special discounts!</p>
+
+
+                <form action="https://formspree.io/f/mldjjeld" method="POST" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter Email Address..." required>
+                    <button type="submit">Submit</button>
+                </form>
+
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/HarperCollins/"><img src="../media/logos/facebook.svg" alt="Facebook"></a>
+                    <a href="https://x.com/harpercollins"><img src="../media/logos/x.svg" alt="X"></a>
+                    <a href="https://www.instagram.com/HarperCollins/"><img src="../media/logos/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@harpercollins"><img src="../media/logos/tiktok.svg" alt="TikTok"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <a href="../index.html#ebooks">Library</a>
+                    <a href="../index.html#ebooks">Collections</a>
+                    <a href="authors.html">Authors</a>
+                    <!-- <a href="#ebooks">Art</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <a href="contact.html">Help Center</a>
+                    <!-- <a href="#">Site Status</a> -->
+                    <a href="contact.html">Billing</a>
+                    <a href="guides.html">Guides</a>
+                    <!-- <a href="#">Blog</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="about-us.html">About Us</a>
+                    <a href="jobs.html">Careers</a>
+                    <a href="contact.html">Affiliate Program</a>
+                    
+                </div>
+                <div class="footer-column">
+                    <h3>Preferences</h3>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <!-- <a href="#ebooks">Bookmarks</a> -->
+                    <!-- <a href="#ebooks">Watchlist</a> -->
+                    <!-- <a href="#ebooks">My Collections</a> -->
+                    <a href="contact.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>help@cognitifly.com</p>
+            <p>&copy; 2025 Cognitifly LLC. All rights reserved.</p>
+            <p>A HarperCollins Company</p>
+            <div class="footer-bottom-links">
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    });
+    </script>
+</body>
+</html>

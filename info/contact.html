@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cognitifly</title>
+    <link rel="icon" href="../media/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: #000;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    /* Header and Navbar */
+    header {
+        background: #000;
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .logo .highlight {
+        color: #17ef97;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .nav-menu a:hover {
+        color: #17ef97;
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Contact Hero Section */
+    .contact-hero {
+        padding: 10rem 2rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-hero h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-hero span.highlight {
+        color: #17ef97;
+    }
+
+    .contact-hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        color: #f0f0f0;
+    }
+
+    /* Contact Options Section */
+    .contact-options {
+        padding: 2rem 2rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .options-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .option-card {
+        background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #222;
+    }
+
+    .option-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(23, 239, 151, 0.1);
+        border-color: #17ef97;
+    }
+
+    .option-icon {
+        background: rgba(23, 239, 151, 0.1);
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .option-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .option-card h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .option-card p, .option-card a {
+        margin-bottom: 0.8rem;
+        color: #ccc;
+    }
+
+    .option-card a {
+        display: block;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .option-card a:hover {
+        color: #17ef97;
+    }
+
+    /* Contact Form Section */
+    .contact-form-section {
+        padding: 4rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        gap: 3rem;
+    }
+
+    .form-content {
+        flex: 1;
+    }
+
+    .form-content h2 {
+        font-size: 2.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-content p {
+        margin-bottom: 2rem;
+        color: #f0f0f0;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-group label {
+        font-weight: 600;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid #333;
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+        outline: none;
+        border-color: #17ef97;
+    }
+
+    .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    .form-submit {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: #17ef97;
+        color: #000;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .form-submit:hover {
+        transform: scale(1.05);
+    }
+
+    .form-image {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    /* Map Section */
+    .map-section {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto 4rem;
+    }
+
+    .map-container {
+        height: 400px;
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .map-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .map-card {
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 16px;
+        padding: 2rem;
+        max-width: 400px;
+        backdrop-filter: blur(10px);
+        border: 1px solid #333;
+    }
+
+    .map-card h3 {
+        color: #17ef97;
+        margin-bottom: 1rem;
+    }
+
+    .map-card p {
+        margin-bottom: 1rem;
+    }
+
+    .map-card a {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: #17ef97;
+        color: #000;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        margin-top: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .map-card a:hover {
+        transform: scale(1.05);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+        padding: 4rem 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq-section h2 {
+        text-align: center;
+        font-size: 2.4rem;
+        margin-bottom: 3rem;
+    }
+
+    .faq-item {
+        margin-bottom: 1.5rem;
+        background: #111;
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .faq-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .faq-question {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #17ef97;
+    }
+
+    .faq-answer {
+        color: #e0e0e0;
+    }
+
+    /* Footer */
+    footer {
+        padding: 4rem 2rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .footer-logo a {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .footer-brand p {
+        color: #e0e0e0;
+        margin-bottom: 1.5rem;
+        max-width: 350px;
+        font-size: 1rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem 1.2rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 25px 0 0 25px;
+    }
+
+    .newsletter-form button {
+        padding: 0.8rem 1.5rem;
+        background: #17ef97;
+        color: #000;
+        border: none;
+        border-radius: 0 25px 25px 0;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-3px);
+        background-color: #f5f5f5;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        flex: 2;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .footer-column h3 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-column a {
+        color: #999;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.8rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+        color: #17ef97;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        border-top: 1px solid #333;
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+        color: #17ef97;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 992px) {
+        .options-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .contact-form-section {
+            flex-direction: column;
+        }
+
+        .form-image {
+            order: -1;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #000;
+            padding: 1rem;
+            flex-direction: column;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .options-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-top {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-brand {
+            width: 100%;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .footer-column {
+            width: 100%;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            text-align: center;
+        }
+        
+        .footer-bottom-links {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    </style>
+
+<script type="text/javascript">
+    window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
+    heap.load("3034367105");
+  </script>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="https://www.cognitifly.com">cogniti<span class="highlight">fly</span></a></div>
+            <div class="hamburger">☰</div>
+            <div class="nav-menu">
+                <a href="https://www.cognitifly.com">Home</a>
+                <a href="../index.html#ebooks">Books</a>
+                <a href="about-us.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <h1>Get in <span class="highlight">Touch</span></h1>
+        <p>Our customer service team is ready to assist you 24/7 with any questions or concerns you may have. Whether you're a client, collaborator, affiliate, or partner, we're here to provide exceptional support.</p>
+    </section>
+
+    <!-- Contact Options -->
+    <section class="contact-options">
+        <div class="options-grid">
+            <div class="option-card">
+                <div class="option-icon">
+                    <img src="../media/icons/email-icon.png" alt="Email"/>
+                </div>
+                <h3>Email Us</h3>
+                <a href="mailto:help@cognitifly.com">help@cognitifly.com</a>
+                <!-- <a href="mailto:billing@cognitifly.com">billing@cognitifly.com</a> -->
+                <a href="mailto:customers@cognitifly.com">customers@cognitifly.com</a>
+                <a href="mailto:partners@cognitifly.com">partners@cognitifly.com</a>
+                <p>We respond to all emails within 24 hours</p>
+            </div>
+            <div class="option-card">
+                <div class="option-icon">
+                    <img src="../media/icons/phone-icon.png" alt="Phone" />
+                </div>
+                <h3>Call Us</h3>
+                <a href="tel:+611300651415">+61 1300 651 415</a>
+                <a href="tel:+611300400312">+61 1300 400 312</a>
+                <p>Available Mon-Fri: 9am-5pm AEST for your convenience</p>
+            </div>
+            <div class="option-card">
+                <div class="option-icon">
+                    <img src="../media/icons/location-icon.png" alt="Location" />
+                </div>
+                <h3>Visit Us</h3>
+                <p>Level 6/180 Thomas St,<br>Sydney NSW 2000,<br>Australia</p>
+                <p>Mon-Fri: 9am-5pm AEST</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="form-content">
+            <h2>Send Us a <span class="highlight">Message</span></h2>
+            <p>Have a specific question or inquiry? Fill out the form below and our team will get back to you as soon as possible.</p>
+            <form class="contact-form" action="https://formspree.io/f/xdkeegoy" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email Address" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="general" style="color: #000000;">General Inquiry</option>
+                        <option value="support" style="color: #000000;">Customer Support</option>
+                        <option value="billing" style="color: #000000;">Billing & Payment</option>
+                        <option value="partnership" style="color: #000000;">Partnership Opportunities</option>
+                        <option value="feedback" style="color: #000000;">Feedback & Suggestions</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+        <div class="form-image">
+            <img src="../media/general/contact-image.svg" alt="Contact Us" />
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <!-- Replace this iframe with an actual Google Maps embed -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.866557461402!2d151.19979241521!3d-33.87734892685584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae2651d51acd%3A0x668a81eb8aef6cf2!2s180%20Thomas%20St%2C%20Sydney%20NSW%202000%2C%20Australia!5e0!3m2!1sen!2sus!4v1616543293672!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            
+            <div class="map-overlay">
+                <div class="map-card">
+                    <h3>Our Office</h3>
+                    <p>Level 6/180 Thomas St,<br>Sydney NSW 2000,<br>Australia</p>
+                    <p>Located in the heart of Sydney's business district, our office is easily accessible by public transport.</p>
+                    <a href="https://goo.gl/maps/QZdQZJX9Xf7hD1Lz5" target="_blank">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">Do I need to create an account to buy an
+                eBook?</div>
+            <div class="faq-answer">
+                <p>You do not need to register or create an account to purchase our ebooks and other digital
+                    products. Just click on the purchase button and proceed to checkout. After receiving your
+                    payment you will be redirected to the download link of your files. A copy of your files will also be
+                    sent to your email, as well as your payment and billing information.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How can I become an affiliate and receive
+                a percentage of the sales generated with
+                my code?</div>
+            <div class="faq-answer">
+                <p>The affiliate program is in beta stage and we will release more details soon. You can send us an
+                    email to partners@cognitifly.com providing relevant information about your numbers and social
+                    media niche. Once your profile has been analyzed, and if accepted, affiliates will be able to
+                    receive up to 70% of the sales generated with their personal codes.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Do you offer refunds?</div>
+            <div class="faq-answer">
+                <p>If you meet all the requirements of our return policy for non-digital (printed) products you can
+                    send an email to help@cognitifly.com requesting your refund. Within 72 hours we will contact you
+                    to evaluate and execute your case.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I participate in the monthly giveaway?</div>
+            <div class="faq-answer">
+                <p>Every eBook purchase automatically enters you into our monthly giveaway for a Kindle Paperwhite or iPad Pro. The more eBooks you purchase, the higher your chances of winning. Winners are announced on the first day of each month. Your participation number, which will be used to claim your prize in the giveaway, will be the same as the license number you acquire for each book purchased. This license will be downloaded along with the digital files of your purchase.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo footer-logo"><a href="#">cogniti<span class="highlight">fly</span></a></div>
+                <p>Subscribe to our newsletter and receive news and special discounts!</p>
+
+                <form action="https://formspree.io/f/mldjjeld" method="POST" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter Email Address..." required>
+                    <button type="submit">Submit</button>
+                </form>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/HarperCollins/"><img src="../media/logos/facebook.svg" alt="Facebook"></a>
+                    <a href="https://x.com/harpercollins"><img src="../media/logos/x.svg" alt="X"></a>
+                    <a href="https://www.instagram.com/HarperCollins/"><img src="../media/logos/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@harpercollins"><img src="../media/logos/tiktok.svg" alt="TikTok"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <a href="../index.html#ebooks">Library</a>
+                    <a href="../index.html#ebooks">Collections</a>
+                    <a href="authors.html">Authors</a>
+                    <!-- <a href="#ebooks">Art</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <a href="contact.html">Help Center</a>
+                    <!-- <a href="#">Site Status</a> -->
+                    <a href="contact.html">Billing</a>
+                    <a href="guides.html">Guides</a>
+                    <!-- <a href="#">Blog</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="about-us.html">About Us</a>
+                    <a href="jobs.html">Careers</a>
+                    <a href="contact.html">Affiliate Program</a>
+                    
+                </div>
+                <div class="footer-column">
+                    <h3>Preferences</h3>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <!-- <a href="#ebooks">Bookmarks</a> -->
+                    <!-- <a href="#ebooks">Watchlist</a> -->
+                    <!-- <a href="#ebooks">My Collections</a> -->
+                    <a href="contact.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>help@cognitifly.com</p>
+            <p>&copy; 2025 Cognitifly LLC. All rights reserved.</p>
+            <p>A HarperCollins Company</p>
+            <div class="footer-bottom-links">
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    });
+    </script>
+</body>
+</html>

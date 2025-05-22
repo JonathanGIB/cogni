@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Cognitifly</title>
+    <link rel="icon" href="../media/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: #000;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    /* Header and Navbar */
+    header {
+        background: #000;
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .logo .highlight {
+        color: #17ef97;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .nav-menu a:hover {
+        color: #17ef97;
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Privacy Hero Section */
+    .privacy-hero {
+        padding: 10rem 2rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .privacy-hero h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    .privacy-hero span.highlight {
+        color: #17ef97;
+    }
+
+    .privacy-hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        color: #f0f0f0;
+    }
+
+    .effective-date {
+        display: inline-block;
+        background: rgba(23, 239, 151, 0.1);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        margin-top: 0.5rem;
+        color: #17ef97;
+        font-weight: 500;
+    }
+
+    /* Privacy Content Section */
+    .privacy-content {
+        padding: 2rem 2rem 4rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .privacy-columns {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .privacy-sidebar {
+        width: 280px;
+        flex-shrink: 0;
+    }
+
+    .privacy-main {
+        flex: 1;
+    }
+
+    .privacy-nav {
+        background: #111;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        position: sticky;
+        top: 100px;
+        border: 1px solid #222;
+    }
+
+    .privacy-nav h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: #17ef97;
+    }
+
+    .privacy-nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .privacy-nav li {
+        margin-bottom: 0.8rem;
+    }
+
+    .privacy-nav a {
+        color: #e0e0e0;
+        text-decoration: none;
+        transition: color 0.3s ease, padding-left 0.3s ease;
+        display: block;
+    }
+
+    .privacy-nav a:hover {
+        color: #17ef97;
+        padding-left: 5px;
+    }
+
+    .privacy-card {
+        background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+        border-radius: 16px;
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        border: 1px solid #222;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .privacy-card:hover {
+        box-shadow: 0 10px 20px rgba(23, 239, 151, 0.05);
+        border-color: #333;
+    }
+
+    .privacy-section {
+        margin-bottom: 2rem;
+    }
+
+    .privacy-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .privacy-section h2 {
+        color: #17ef97;
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+        position: relative;
+        padding-bottom: 0.8rem;
+    }
+
+    .privacy-section h2::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background: #17ef97;
+        border-radius: 2px;
+    }
+
+    .privacy-section h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+        color: #fff;
+    }
+
+    .privacy-section p, .privacy-section ul, .privacy-section ol {
+        margin-bottom: 1rem;
+        color: #e0e0e0;
+    }
+
+    .privacy-section ul, .privacy-section ol {
+        padding-left: 2rem;
+    }
+
+    .privacy-section li {
+        margin-bottom: 0.5rem;
+    }
+
+    .privacy-section a {
+        color: #17ef97;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .privacy-section a:hover {
+        opacity: 0.8;
+    }
+
+    .highlight-box {
+        background: rgba(23, 239, 151, 0.05);
+        border-left: 3px solid #17ef97;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .highlight-box p {
+        margin-bottom: 0;
+    }
+
+    .privacy-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+        margin-top: 2rem;
+        border-top: 1px solid #333;
+        font-size: 0.9rem;
+        color: #999;
+    }
+
+    .privacy-date {
+        font-style: italic;
+    }
+
+    .privacy-print a {
+        color: #17ef97;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .cta-container {
+        display: flex;
+        justify-content: center;
+        margin: 3rem 0 1rem;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        padding: 0.9rem 2.2rem;
+        background: #17ef97;
+        color: #000;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: transform 0.3s ease;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .cta-btn:hover {
+        transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+        padding: 4rem 2rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .footer-logo a {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .footer-brand p {
+        color: #e0e0e0;
+        margin-bottom: 1.5rem;
+        max-width: 350px;
+        font-size: 1rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem 1.2rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 25px 0 0 25px;
+    }
+
+    .newsletter-form button {
+        padding: 0.8rem 1.5rem;
+        background: #17ef97;
+        color: #000;
+        border: none;
+        border-radius: 0 25px 25px 0;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-3px);
+        background-color: #f5f5f5;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        flex: 2;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .footer-column h3 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-column a {
+        color: #999;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.8rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+        color: #17ef97;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        border-top: 1px solid #333;
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+        color: #17ef97;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 992px) {
+        .privacy-columns {
+            flex-direction: column;
+        }
+
+        .privacy-sidebar {
+            width: 100%;
+        }
+
+        .privacy-nav {
+            position: static;
+            margin-bottom: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #000;
+            padding: 1rem;
+            flex-direction: column;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .privacy-meta {
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .footer-top {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-brand {
+            width: 100%;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .footer-column {
+            width: 100%;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            text-align: center;
+        }
+        
+        .footer-bottom-links {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    </style>
+   
+   <script type="text/javascript">
+    window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
+    heap.load("3034367105");
+  </script>   
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="https://www.cognitifly.com">cogniti<span class="highlight">fly</span></a></div>
+            <div class="hamburger">☰</div>
+            <div class="nav-menu">
+                <a href="https://www.cognitifly.com/">Home</a>
+                <a href="../index.html#ebooks">Books</a>
+                <a href="about-us.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Privacy Hero Section -->
+    <section class="privacy-hero">
+        <h1>Privacy <span class="highlight">Policy</span></h1>
+        <p>At Cognitifly, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, disclose, and safeguard your data when you visit our website or use our services.</p>
+        <span class="effective-date">Last Updated: March 19, 2025</span>
+    </section>
+
+    <!-- Privacy Content Section -->
+    <section class="privacy-content">
+        <div class="privacy-columns">
+            <!-- Sidebar with Navigation -->
+            <div class="privacy-sidebar">
+                <div class="privacy-nav">
+                    <h3>Contents</h3>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#information-collection">Information We Collect</a></li>
+                        <li><a href="#information-use">How We Use Your Information</a></li>
+                        <li><a href="#information-sharing">Information Sharing</a></li>
+                        <li><a href="#cookies">Cookies & Tracking Technologies</a></li>
+                        <li><a href="#data-security">Data Security</a></li>
+                        <li><a href="#user-rights">Your Rights</a></li>
+                        <li><a href="#gdpr">GDPR Compliance</a></li>
+                        <li><a href="#ccpa">CCPA Compliance</a></li>
+                        <li><a href="#international">International Data Transfers</a></li>
+                        <li><a href="#children">Children's Privacy</a></li>
+                        <li><a href="#changes">Changes to Privacy Policy</a></li>
+                        <li><a href="#contact">Contact Information</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="privacy-main">
+                <div class="privacy-card">
+                    <div class="privacy-section" id="overview">
+                        <h2>1. Overview</h2>
+                        <p>Cognitifly LLC ("Cognitifly," "we," "us," or "our") operates the website www.cognitifly.com (the "Site"), which provides eBooks and related services (collectively, the "Services"). This Privacy Policy applies to all information collected through our Services as well as any related services, sales, marketing, or events.</p>
+                        
+                        <p>By accessing or using our Services, you agree to this Privacy Policy. If you do not agree with any part of this policy, please do not access the Site or use our Services.</p>
+                        
+                        <div class="highlight-box">
+                            <p>We take your privacy seriously and use your information only as described in this Privacy Policy. This policy is designed to help you understand what information we collect, how we use it, and what choices you have regarding your personal data.</p>
+                        </div>
+                    </div>
+
+                    <div class="privacy-section" id="information-collection">
+                        <h2>2. Information We Collect</h2>
+                        
+                        <h3>2.1 Personal Information You Provide</h3>
+                        <p>We collect personal information that you voluntarily provide to us when you:</p>
+                        <ul>
+                            <li>Register on the Site</li>
+                            <li>Purchase our products</li>
+                            <li>Subscribe to our newsletter</li>
+                            <li>Request customer support</li>
+                            <li>Participate in promotions, surveys, or giveaways</li>
+                        </ul>
+                        
+                        <p>The personal information we collect may include:</p>
+                        <ul>
+                            <li>Contact information (name, email address, phone number, mailing address)</li>
+                            <li>Billing information (credit card details, billing address)</li>
+                            <li>Account credentials (username, password)</li>
+                            <li>Purchase history and preferences</li>
+                            <li>Communication preferences</li>
+                        </ul>
+                        
+                        <h3>2.2 Information Automatically Collected</h3>
+                        <p>When you visit our Site or use our Services, we automatically collect certain information, including:</p>
+                        <ul>
+                            <li>Device information (device type, operating system, browser type)</li>
+                            <li>IP address and location information</li>
+                            <li>Usage data (pages visited, time spent on pages, clicks, interactions)</li>
+                            <li>Referring website or source</li>
+                            <li>Cookies and similar tracking technologies (as described below)</li>
+                        </ul>
+                    </div>
+
+                    <div class="privacy-section" id="information-use">
+                        <h2>3. How We Use Your Information</h2>
+                        <p>We use the information we collect for various business and commercial purposes, including to:</p>
+                        <ul>
+                            <li>Provide, maintain, and improve our Services</li>
+                            <li>Process and fulfill your orders, purchases, and requests</li>
+                            <li>Communicate with you about your account, orders, or requests</li>
+                            <li>Send you transactional emails and notifications</li>
+                            <li>Send promotional materials, newsletters, and marketing communications (if you've opted in)</li>
+                            <li>Personalize your experience and deliver content tailored to your interests</li>
+                            <li>Administer promotions, surveys, and giveaways</li>
+                            <li>Monitor and analyze usage patterns and trends</li>
+                            <li>Detect, prevent, and address technical issues, fraud, or illegal activities</li>
+                            <li>Comply with legal obligations</li>
+                            <li>Enforce our Terms of Use and other policies</li>
+                        </ul>
+                        
+                        <p>We may combine information we collect from different sources to improve our Services, content, and marketing efforts.</p>
+                    </div>
+
+                    <div class="privacy-section" id="information-sharing">
+                        <h2>4. Information Sharing</h2>
+                        <p>We may share your information in the following situations:</p>
+                        
+                        <h3>4.1 Service Providers</h3>
+                        <p>We share information with third-party service providers who perform services on our behalf, such as payment processing, data analysis, email delivery, hosting, customer service, and marketing assistance.</p>
+                        
+                        <h3>4.2 Business Transfers</h3>
+                        <p>We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</p>
+                        
+                        <h3>4.3 Legal Requirements</h3>
+                        <p>We may disclose your information where we are legally required to do so to comply with applicable law, governmental requests, judicial proceedings, court orders, or legal processes.</p>
+                        
+                        <h3>4.4 Protect Rights and Safety</h3>
+                        <p>We may disclose your information when we believe it is necessary to investigate, prevent, or take action regarding potential violations of our policies, suspected fraud, situations involving potential threats to the safety of any person, or as evidence in litigation.</p>
+                        
+                        <h3>4.5 With Your Consent</h3>
+                        <p>We may share your information with your consent or at your direction.</p>
+                        
+                        <div class="highlight-box">
+                            <p>We do not sell, rent, or trade your personal information to third parties for their marketing purposes without your explicit consent.</p>
+                        </div>
+                    </div>
+
+                    <div class="privacy-section" id="cookies">
+                        <h2>5. Cookies & Tracking Technologies</h2>
+                        <p>We use cookies and similar tracking technologies to collect and store information about your interactions with our Site and Services.</p>
+                        
+                        <h3>5.1 Types of Cookies We Use</h3>
+                        <ul>
+                            <li><strong>Essential Cookies:</strong> Necessary for the operation of our Site and Services.</li>
+                            <li><strong>Analytical/Performance Cookies:</strong> Allow us to recognize and count visitors and see how they move around our Site.</li>
+                            <li><strong>Functionality Cookies:</strong> Enable the Site to provide enhanced functionality and personalization.</li>
+                            <li><strong>Targeting Cookies:</strong> Record your visit to our Site, the pages you visit, and the links you follow to deliver more relevant advertisements.</li>
+                        </ul>
+                        
+                        <h3>5.2 Your Cookie Choices</h3>
+                        <p>Most web browsers are set to accept cookies by default. You can typically remove or reject cookies through your browser settings. To learn more about how to manage cookies, please consult your browser's help function or visit <a href="https://www.allaboutcookies.org" target="_blank">www.allaboutcookies.org</a>.</p>
+                        
+                        <p>Please note that removing or rejecting cookies could affect the availability and functionality of our Services.</p>
+                    </div>
+
+                    <div class="privacy-section" id="data-security">
+                        <h2>6. Data Security</h2>
+                        <p>We implement appropriate technical and organizational measures to protect the personal information we collect and process. However, no security system is impenetrable, and we cannot guarantee the absolute security of our systems. In the event of a security breach, we will promptly notify you in accordance with applicable law.</p>
+                        
+                        <p>We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+                    </div>
+
+                    <div class="privacy-section" id="user-rights">
+                        <h2>7. Your Rights</h2>
+                        <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+                        <ul>
+                            <li>The right to access the personal information we hold about you</li>
+                            <li>The right to request correction of inaccurate personal information</li>
+                            <li>The right to request deletion of your personal information</li>
+                            <li>The right to object to or restrict processing of your personal information</li>
+                            <li>The right to data portability</li>
+                            <li>The right to withdraw consent at any time (where processing is based on consent)</li>
+                            <li>The right to lodge a complaint with a supervisory authority</li>
+                        </ul>
+                        
+                        <p>To exercise these rights, please contact us using the information provided in the "Contact Information" section below.</p>
+                    </div>
+
+                    <div class="privacy-section" id="gdpr">
+                        <h2>8. GDPR Compliance</h2>
+                        <p>For users in the European Economic Area (EEA), United Kingdom, or Switzerland, we process personal information in accordance with the General Data Protection Regulation (GDPR) and other applicable data protection laws.</p>
+                        
+                        <h3>8.1 Legal Basis for Processing</h3>
+                        <p>We process your personal information under the following legal bases:</p>
+                        <ul>
+                            <li><strong>Performance of a Contract:</strong> Processing necessary to provide our Services and fulfill our contractual obligations to you.</li>
+                            <li><strong>Legitimate Interests:</strong> Processing necessary for our legitimate interests, provided they are not overridden by your rights and interests.</li>
+                            <li><strong>Compliance with Legal Obligations:</strong> Processing necessary to comply with applicable laws and regulations.</li>
+                            <li><strong>Consent:</strong> Processing based on your specific consent for particular purposes, such as marketing communications.</li>
+                        </ul>
+                        
+                        <h3>8.2 Data Protection Officer</h3>
+                        <p>Our Data Protection Officer can be contacted at <a href="mailto:dpo@cognitifly.com">dpo@cognitifly.com</a>.</p>
+                    </div>
+
+                    <div class="privacy-section" id="ccpa">
+                        <h2>9. CCPA Compliance</h2>
+                        <p>The California Consumer Privacy Act (CCPA) provides California residents with specific rights regarding their personal information. If you are a California resident, this section applies to you.</p>
+                        
+                        <h3>9.1 Your CCPA Rights</h3>
+                        <ul>
+                            <li><strong>Right to Know:</strong> You have the right to request information about the personal information we have collected, used, disclosed, and sold about you over the past 12 months.</li>
+                            <li><strong>Right to Delete:</strong> You have the right to request deletion of your personal information we have collected and retained.</li>
+                            <li><strong>Right to Opt-Out:</strong> You have the right to opt-out of the sale of your personal information. However, we do not currently sell personal information as defined by the CCPA.</li>
+                            <li><strong>Non-Discrimination:</strong> You have the right not to be discriminated against for exercising your CCPA rights.</li>
+                        </ul>
+                        
+                        <h3>9.2 Exercising Your CCPA Rights</h3>
+                        <p>To exercise your CCPA rights, please contact us using the information provided in the "Contact Information" section below. We may need to verify your identity before fulfilling your request.</p>
+                    </div>
+
+                    <div class="privacy-section" id="international">
+                        <h2>10. International Data Transfers</h2>
+                        <p>We are based in Australia and process data globally. Your personal information may be processed in countries where data protection and privacy regulations may differ from those in your country of residence.</p>
+                        
+                        <p>When we transfer your information outside your country of residence, we take steps to ensure that appropriate safeguards are in place to protect your personal information, including using standard contractual clauses approved by the European Commission or other suitable transfer mechanisms.</p>
+                    </div>
+
+                    <div class="privacy-section" id="children">
+                        <h2>11. Children's Privacy</h2>
+                        <p>Our Services are not intended for children under the age of 18. We do not knowingly collect or solicit personal information from children under 18. If you believe we have collected personal information from a child under 18, please contact us immediately using the information provided in the "Contact Information" section below, and we will take steps to remove such information.</p>
+                    </div>
+
+                    <div class="privacy-section" id="changes">
+                        <h2>12. Changes to Privacy Policy</h2>
+                        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the updated Privacy Policy on this page and updating the "Last Updated" date at the top of this page.</p>
+                        
+                        <p>We encourage you to review this Privacy Policy periodically to stay informed about our information practices. Your continued use of our Services after any changes to this Privacy Policy constitutes your acceptance of such changes.</p>
+                    </div>
+
+                    <div class="privacy-section" id="contact">
+                        <h2>13. Contact Information</h2>
+                        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:</p>
+                        <p>
+                            Cognitifly LLC<br>
+                            Level 6/180 Thomas St,<br>
+                            Sydney NSW 2000,<br>
+                            Australia
+                        </p>
+                        <p>Email: <a href="mailto:privacy@cognitifly.com">privacy@cognitifly.com</a></p>
+                        <p>Phone: +61 1300 651 415</p>
+                    </div>
+
+                    <div class="privacy-meta">
+                        <div class="privacy-date">Effective Date: March 19, 2025</div>
+                        <div class="privacy-print">
+                            <a href="javascript:window.print()">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 19H3C2.44772 19 2 18.5523 2 18V8C2 7.44772 2.44772 7 3 7H21C21.5523 7 22 7.44772 22 8V18C22 18.5523 21.5523 19 21 19H18M6 19V14H18V19M6 19H18M8 7V3H16V7" stroke="#17ef97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Print Privacy Policy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-container">
+        <a href="../index.html" class="cta-btn">Back to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo footer-logo"><a href="#">cogniti<span class="highlight">fly</span></a></div>
+                <p>Subscribe to our newsletter and receive news and special discounts!</p>
+
+
+                <form action="https://formspree.io/f/mldjjeld" method="POST" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter Email Address..." required>
+                    <button type="submit">Submit</button>
+                </form>
+
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/HarperCollins/"><img src="../media/logos/facebook.svg" alt="Facebook"></a>
+                    <a href="https://x.com/harpercollins"><img src="../media/logos/x.svg" alt="X"></a>
+                    <a href="https://www.instagram.com/HarperCollins/"><img src="../media/logos/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@harpercollins"><img src="../media/logos/tiktok.svg" alt="TikTok"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <a href="../index.html#ebooks">Library</a>
+                    <a href="../index.html#ebooks">Collections</a>
+                    <a href="authors.html">Authors</a>
+                    <!-- <a href="#ebooks">Art</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <a href="contact.html">Help Center</a>
+                    <!-- <a href="#">Site Status</a> -->
+                    <a href="contact.html">Billing</a>
+                    <a href="guides.html">Guides</a>
+                    <!-- <a href="#">Blog</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="about-us.html">About Us</a>
+                    <a href="jobs.html">Careers</a>
+                    <a href="contact.html">Affiliate Program</a>
+                    
+                </div>
+                <div class="footer-column">
+                    <h3>Preferences</h3>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <!-- <a href="#ebooks">Bookmarks</a> -->
+                    <!-- <a href="#ebooks">Watchlist</a> -->
+                    <!-- <a href="#ebooks">My Collections</a> -->
+                    <a href="contact.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>help@cognitifly.com</p>
+            <p>&copy; 2025 Cognitifly LLC. All rights reserved.</p>
+            <p>A HarperCollins Company</p>
+            <div class="footer-bottom-links">
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    });
+    </script>
+</body>
+</html>

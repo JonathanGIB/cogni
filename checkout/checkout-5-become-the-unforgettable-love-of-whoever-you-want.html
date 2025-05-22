@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your purchase of Become The Unforgettable Love of Whoever you Want ebook using USDC cryptocurrency.">
+    <title>Checkout - Become The Unforgettable Love of Whoever you Want | Cognitifly</title>
+    <link rel="icon" href="../media/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: #000;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    /* Header and Navbar */
+    header {
+        background: #000;
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .logo .highlight {
+        color: #17ef97;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .nav-menu a:hover {
+        color: #17ef97;
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Checkout Section */
+    .checkout-section {
+        padding: 10rem 1rem 4rem;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .checkout-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .checkout-container {
+        display: flex;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .payment-details {
+        flex: 1.3;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .order-summary {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 2rem;
+        height: fit-content;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    .section-title img {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .warning {
+        background: rgba(23, 239, 151, 0.1);
+        border-left: 4px solid #17ef97;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .warning-icon {
+        font-size: 1.5rem;
+        color: #17ef97;
+    }
+
+    .warning-text {
+        font-size: 0.95rem;
+        color: #e0e0e0;
+    }
+
+    .payment-field {
+        margin-bottom: 1.5rem;
+    }
+
+    .payment-field label {
+        display: block;
+        font-size: 0.9rem;
+        color: #999;
+        margin-bottom: 0.5rem;
+    }
+
+    .payment-value {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.payment-value span {
+    word-break: break-all;
+    width: 100%;
+}
+
+.payment-value .address-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.copy-btn {
+    background: rgba(23, 239, 151, 0.2);
+    color: #17ef97;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-end;
+    min-width: 80px;
+    text-align: center;
+}
+
+    .copy-btn:hover {
+        background: rgba(23, 239, 151, 0.3);
+    }
+
+    .copy-icon {
+        margin-left: 5px;
+    }
+
+    .expires {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #ff6b6b;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+
+    .timer {
+        font-weight: 600;
+    }
+
+    .summary-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .summary-item.total {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 1rem;
+        padding-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .summary-item .value {
+        color: #17ef97;
+    }
+
+    .product-details {
+        margin-bottom: 2rem;
+    }
+
+    .product-info {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .product-image {
+        width: 80px;
+        height: 100px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .product-meta {
+        flex: 1;
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+    }
+
+    .product-author {
+        font-size: 0.9rem;
+        color: #999;
+        margin-bottom: 0.5rem;
+    }
+
+    .download-section {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .download-btn {
+        background: rgba(23, 239, 151, 0.1);
+        color: rgba(23, 239, 151, 0.5);
+        border: none;
+        border-radius: 25px;
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        cursor: not-allowed;
+        transition: all 0.3s ease;
+        opacity: 0.7;
+    }
+
+    .waiting-text {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1rem;
+        color: #ccc;
+    }
+
+    .loading-circle {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(23, 239, 151, 0.3);
+        border-top: 2px solid #17ef97;
+        border-radius: 50%;
+        animation: spin 1.5s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .faq-section {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .faq-item {
+        margin-bottom: 1.5rem;
+    }
+
+    .faq-question {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #17ef97;
+    }
+
+    .faq-answer {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #e0e0e0;
+    }
+
+    .crypto-guide {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.guide-link {
+    color: #17ef97;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.guide-link:hover {
+    color: #fff;
+}
+
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.payment-methods a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-methods img {
+    width: 34px;
+    height: 34px;
+    transition: opacity 0.3s ease;
+}
+
+.payment-methods a:hover {
+    transform: translateY(-3px);
+    background-color: #f5f5f5;
+}
+
+    /* Footer */
+    footer {
+        padding: 4rem 2rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .footer-logo a {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        display: inline-block;
+    }
+
+    .footer-brand p {
+        color: #e0e0e0;
+        margin-bottom: 1.5rem;
+        max-width: 350px;
+        font-size: 1rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem 1.2rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 25px 0 0 25px;
+    }
+
+    .newsletter-form button {
+        padding: 0.8rem 1.5rem;
+        background: #17ef97;
+        color: #000;
+        border: none;
+        border-radius: 0 25px 25px 0;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-3px);
+        background-color: #f5f5f5;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        flex: 2;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .footer-column h3 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-column a {
+        color: #999;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.8rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+        color: #17ef97;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        border-top: 1px solid #333;
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+        color: #17ef97;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #000;
+            padding: 1rem;
+            flex-direction: column;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .checkout-container {
+            flex-direction: column;
+        }
+
+        .footer-top {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-brand {
+            width: 100%;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .footer-column {
+            width: 100%;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .footer-bottom p {
+            text-align: center;
+        }
+        
+        .footer-bottom-links {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    </style>
+
+<script type="text/javascript">
+    window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
+    heap.load("3034367105");
+  </script>  
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="https://www.cognitifly.com/">cogniti<span class="highlight">fly</span></a></div>
+            <div class="hamburger">☰</div>
+            <div class="nav-menu">
+                <a href="https://www.cognitifly.com/">Home</a>
+                <a href="../index.html#ebooks">Books</a>
+                <a href="../info/about-us.html">About</a>
+                <a href="../info/contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <h1 class="checkout-title">Complete Your Purchase</h1>
+        
+        <div class="checkout-container">
+            <div class="payment-details">
+                <h2 class="section-title">
+                    <img src="../media/logos/usdc-logo.svg" alt="USDC" width="30">
+                    Pay with USDC
+                </h2>
+                
+                
+                
+                <div class="warning">
+                    <span class="warning-icon">ⓘ</span>
+                    <div class="warning-text">
+                        Only send USDC using the Ethereum network
+                    </div>
+                </div>
+                
+                <div class="payment-field">
+                    <label>Payment Network</label>
+                    <div class="payment-value">
+                        <div class="network-info">
+                            <img src="../media/logos/bnb-smart-chain-bep20.svg" alt="BNB" width="20" style="vertical-align: middle; margin-right: 10px;">
+                            Ethereum
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-field">
+                    <label>Payment unique address</label>
+                    <div class="payment-value">
+                        <span>0x9e7A29277280221560cf014Ad36151C9384b2060</span>
+                        <div class="address-row">
+                            <button class="copy-btn">Copy<i class="copy-icon">📋</i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-field">
+                    <label>Amount to pay</label>
+                    <div class="payment-value">
+                        <div class="address-row">
+                            <span>39.00 USDC</span>
+                            <!-- <button class="copy-btn">Copy<i class="copy-icon">📋</i></button> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-field">
+                    <label>Invoice ID</label>
+                    <div class="payment-value">
+                        <span>159428-2025-7392-lm16-9B2e1A7d648c</span>
+                    </div>
+                </div>
+                
+                <div class="expires">
+                    <span>⏱️</span>
+                    <span>This payment ID expires in <span class="timer">20:00</span> minutes</span>
+                </div>
+            </div>
+            
+            <div class="order-summary">
+                <h2 class="section-title">Order Summary</h2>
+                
+                <div class="product-details">
+                    <div class="product-info">
+                        <div class="product-image">
+                            <img src="../media/cover/1-coll-5.webp" alt="Become The Unforgettable Love of Whoever you Want">
+                        </div>
+                        <div class="product-meta">
+                            <h3 class="product-title">Become The Unforgettable Love of Whoever you Want</h3>
+                            <p class="product-author">By Nicolas Dupont</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="summary-item">
+                    <span>Price</span>
+                    <span class="value">$39.00 USD</span>
+                </div>
+                
+                <div class="summary-item total">
+                    <span>Total</span>
+                    <span class="value">39.00 USDC</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Download Section -->
+        <div class="download-section">
+            <button class="download-btn" disabled>Download eBook</button>
+            <div class="waiting-text">
+                <span>Waiting for payment confirmation</span>
+                <div class="loading-circle"></div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="section-title">FAQ About Payments</h2>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Crypto payments?</h3>
+                <p class="faq-answer">
+                    Content platforms such as Google Books or Amazon Books, Card payment processors, and Buy Now, Pay Later service providers, impose extremely high fees, ranging from 45% to 80% of our revenue for each sale. If we decided to accept these payment methods, we would have to increase the prices of our eBooks, courses, seminars and other content by more than three times, which would directly impact our customers.
+                    <br><br>
+                    By opting exclusively for USDC, we can maintain fair and affordable prices without having to inflate them to cover external fees.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">I am new at crypto payments. Is it complicated to pay with USDC?</h3>
+                <p class="faq-answer">
+                    Absolutely not. If you have not yet used USDC, you can easily buy and transfer from most exchanges. Simply select the USDC amount, our Wallet address, the Ethereum network and you're done. You can use platforms such as MoonPay, Coinbase and Binance, as they allow you to buy USDC easily and quickly using Google Pay, Apple pay, Debit and Credit Cards, Paypal, GiftCards, etc, with 0 fees.
+                </p>
+            </div>
+            
+            <div class="payment-methods">
+                <a><img src="../media/logos/visa.svg" alt="Visa"></a>
+                <a><img src="../media/logos/master-card.svg" alt="Mastercard"></a>
+                <a><img src="../media/logos/amexx.svg" alt="American Express"></a>
+                <a><img src="../media/logos/discover.svg" alt="Discover"></a>
+                
+                <a><img src="../media/logos/unionpay.svg" alt="UnionPay"></a>
+                <a><img src="../media/logos/apple-pay.svg" alt="Apple Pay"></a>
+                <a><img src="../media/logos/google-pay.svg" alt="Google Pay"></a>
+            </div>
+
+            <p class="crypto-guide">
+                <a href="../info/guides.html" class="guide-link">Check out our USDC beginner's guide and start paying with crypto in less than 5 minutes</a>
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo footer-logo"><a href="#">cogniti<span class="highlight">fly</span></a></div>
+                <p>Subscribe to our newsletter and receive news and special discounts!</p>
+
+
+                <form action="https://formspree.io/f/mldjjeld" method="POST" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter Email Address..." required>
+                    <button type="submit">Submit</button>
+                </form>
+
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/HarperCollins/"><img src="../media/logos/facebook.svg" alt="Facebook"></a>
+                    <a href="https://x.com/harpercollins"><img src="../media/logos/x.svg" alt="X"></a>
+                    <a href="https://www.instagram.com/HarperCollins/"><img src="../media/logos/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@harpercollins"><img src="../media/logos/tiktok.svg" alt="TikTok"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <a href="../index.html#ebooks">Library</a>
+                    <a href="../index.html#ebooks">Collections</a>
+                    <a href="../info/authors.html">Authors</a>
+                    <!-- <a href="#ebooks">Art</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <a href="../info/contact.html">Help Center</a>
+                    <!-- <a href="#">Site Status</a> -->
+                    <a href="../info/contact.html">Billing</a>
+                    <a href="../info/guides.html">Guides</a>
+                    <!-- <a href="#">Blog</a> -->
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="../info/about-us.html">About Us</a>
+                    <a href="../info/jobs.html">Careers</a>
+                    <a href="../info/contact.html">Affiliate Program</a>
+                    
+                </div>
+                <div class="footer-column">
+                    <h3>Preferences</h3>
+                    <a href="../info/terms-of-use.html">Terms of Use</a>
+                    <a href="../info/privacy-policy.html">Privacy Policy</a>
+                    <!-- <a href="#ebooks">Bookmarks</a> -->
+                    <!-- <a href="#ebooks">Watchlist</a> -->
+                    <!-- <a href="#ebooks">My Collections</a> -->
+                    <a href="../info/contact.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>help@cognitifly.com</p>
+            <p>&copy; 2025 Cognitifly LLC. All rights reserved.</p>
+            <p>A HarperCollins Company</p>
+            <div class="footer-bottom-links">
+                <a href="../info/terms-of-use.html">Terms of Use</a>
+                <a href="../info/privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Countdown timer for payment expiration
+        const timerElement = document.querySelector('.timer');
+        let timeLeft = 20 * 60; // 20 minutes in seconds
+        
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                timerElement.parentElement.textContent = 'Payment expired. Please refresh to generate a new payment address.';
+                timerElement.parentElement.style.color = '#ff6b6b';
+            }
+        }
+        
+        updateTimer();
+        
+        // Copy button functionality
+        // Copy button functionality
+const copyButtons = document.querySelectorAll('.copy-btn');
+
+copyButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Find the text to copy based on context
+        let textToCopy;
+        
+        // Check if the button is in an address-row div
+        if (this.closest('.address-row')) {
+            // For the amount section
+            if (this.closest('.address-row').querySelector('span')) {
+                textToCopy = this.closest('.address-row').querySelector('span').textContent;
+            } else {
+                // For the address section (look at parent payment-value)
+                textToCopy = this.closest('.payment-value').querySelector('span').textContent;
+            }
+        } else {
+            // Fallback to previous behavior
+            textToCopy = this.previousElementSibling ? this.previousElementSibling.textContent : '';
+        }
+        
+        // Copy the text
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalText = this.innerHTML;
+            this.innerHTML = 'Copied!';
+            this.style.background = 'rgba(23, 239, 151, 0.4)';
+            
+            setTimeout(() => {
+                this.innerHTML = originalText;
+                this.style.background = 'rgba(23, 239, 151, 0.2)';
+            }, 2000);
+        });
+    });
+});
+    });
+    </script>
+</body>
+</html>

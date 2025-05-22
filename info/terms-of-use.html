@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Cognitifly</title>
+    <link rel="icon" href="../media/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: #000;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    /* Header and Navbar */
+    header {
+        background: #000;
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .logo .highlight {
+        color: #17ef97;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .nav-menu a:hover {
+        color: #17ef97;
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Terms Hero Section */
+    .terms-hero {
+        padding: 10rem 2rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .terms-hero h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    .terms-hero span.highlight {
+        color: #17ef97;
+    }
+
+    .terms-hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        color: #f0f0f0;
+    }
+
+    /* Terms Content Section */
+    .terms-content {
+        padding: 2rem 2rem 4rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .terms-card {
+        background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+        border-radius: 16px;
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        border: 1px solid #222;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .terms-card:hover {
+        box-shadow: 0 10px 20px rgba(23, 239, 151, 0.05);
+        border-color: #333;
+    }
+
+    .terms-section {
+        margin-bottom: 2rem;
+    }
+
+    .terms-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .terms-section h2 {
+        color: #17ef97;
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+        position: relative;
+        padding-bottom: 0.8rem;
+    }
+
+    .terms-section h2::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background: #17ef97;
+        border-radius: 2px;
+    }
+
+    .terms-section h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+        color: #fff;
+    }
+
+    .terms-section p, .terms-section ul, .terms-section ol {
+        margin-bottom: 1rem;
+        color: #e0e0e0;
+    }
+
+    .terms-section ul, .terms-section ol {
+        padding-left: 2rem;
+    }
+
+    .terms-section li {
+        margin-bottom: 0.5rem;
+    }
+
+    .terms-section a {
+        color: #17ef97;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .terms-section a:hover {
+        opacity: 0.8;
+    }
+
+    .terms-nav {
+        background: #111;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        position: sticky;
+        top: 100px;
+        border: 1px solid #222;
+    }
+
+    .terms-nav h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: #17ef97;
+    }
+
+    .terms-nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .terms-nav li {
+        margin-bottom: 0.8rem;
+    }
+
+    .terms-nav a {
+        color: #e0e0e0;
+        text-decoration: none;
+        transition: color 0.3s ease, padding-left 0.3s ease;
+        display: block;
+    }
+
+    .terms-nav a:hover {
+        color: #17ef97;
+        padding-left: 5px;
+    }
+
+    .terms-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+        margin-top: 2rem;
+        border-top: 1px solid #333;
+        font-size: 0.9rem;
+        color: #999;
+    }
+
+    .terms-date {
+        font-style: italic;
+    }
+
+    .terms-print a {
+        color: #17ef97;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .terms-columns {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .terms-sidebar {
+        width: 280px;
+        flex-shrink: 0;
+    }
+
+    .terms-main {
+        flex: 1;
+    }
+
+    .effective-date {
+        display: inline-block;
+        background: rgba(23, 239, 151, 0.1);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        margin-top: 0.5rem;
+        color: #17ef97;
+        font-weight: 500;
+    }
+
+    .highlight-box {
+        background: rgba(23, 239, 151, 0.05);
+        border-left: 3px solid #17ef97;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .highlight-box p {
+        margin-bottom: 0;
+    }
+
+    /* Footer */
+    footer {
+        padding: 4rem 2rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .footer-logo a {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .footer-brand p {
+        color: #e0e0e0;
+        margin-bottom: 1.5rem;
+        max-width: 350px;
+        font-size: 1rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem 1.2rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 25px 0 0 25px;
+    }
+
+    .newsletter-form button {
+        padding: 0.8rem 1.5rem;
+        background: #17ef97;
+        color: #000;
+        border: none;
+        border-radius: 0 25px 25px 0;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-3px);
+        background-color: #f5f5f5;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        flex: 2;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .footer-column h3 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-column a {
+        color: #999;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.8rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+        color: #17ef97;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        border-top: 1px solid #333;
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+        color: #17ef97;
+    }
+
+    .cta-container {
+        display: flex;
+        justify-content: center;
+        margin: 3rem 0 1rem;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        padding: 0.9rem 2.2rem;
+        background: #17ef97;
+        color: #000;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: transform 0.3s ease;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .cta-btn:hover {
+        transform: scale(1.05);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 992px) {
+        .terms-columns {
+            flex-direction: column;
+        }
+
+        .terms-sidebar {
+            width: 100%;
+        }
+
+        .terms-nav {
+            position: static;
+            margin-bottom: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #000;
+            padding: 1rem;
+            flex-direction: column;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .terms-meta {
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .footer-top {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-brand {
+            width: 100%;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .footer-column {
+            width: 100%;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            text-align: center;
+        }
+        
+        .footer-bottom-links {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    </style>
+
+    <script type="text/javascript">
+        window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
+        heap.load("3034367105");
+      </script>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="https://www.cognitifly.com">cogniti<span class="highlight">fly</span></a></div>
+            <div class="hamburger">☰</div>
+            <div class="nav-menu">
+                <a href="https://www.cognitifly.com/">Home</a>
+                <a href="../index.html#ebooks">Books</a>
+                <a href="about-us.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Terms Hero Section -->
+    <section class="terms-hero">
+        <h1>Terms of <span class="highlight">Use</span></h1>
+        <p>We may terminate or suspend your access to our Services immediately, without prior notice or liability, for any reason whatsoever, including, without limitation, if you breach these Terms.</p>
+                        <p>Upon termination, your right to use our Services will immediately cease. All provisions of these Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+                        <p>If your account is terminated for any reason, you may lose access to any content, including purchased eBooks, that you have stored or accessed through our Services. We are not responsible for any loss of data or content as a result of termination.</p>Please read these Terms of Use carefully before using our website and services. By accessing or using Cognitifly, you agree to be bound by these terms.</p>
+        <span class="effective-date">Last Updated: March 19, 2025</span>
+    </section>
+
+    <!-- Terms Content Section -->
+    <section class="terms-content">
+        <div class="terms-columns">
+            <!-- Sidebar with Navigation -->
+            <div class="terms-sidebar">
+                <div class="terms-nav">
+                    <h3>Contents</h3>
+                    <ul>
+                        <li><a href="#acceptance">Acceptance of Terms</a></li>
+                        <li><a href="#definitions">Definitions</a></li>
+                        <li><a href="#eligibility">Eligibility</a></li>
+                        <li><a href="#account">Account Registration</a></li>
+                        <li><a href="#products">Products & Services</a></li>
+                        <li><a href="#purchases">Purchases & Payments</a></li>
+                        <li><a href="#intellectual">Intellectual Property</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#user-content">User Content</a></li>
+                        <li><a href="#prohibited">Prohibited Activities</a></li>
+                        <li><a href="#disclaimer">Disclaimers</a></li>
+                        <li><a href="#limitation">Limitation of Liability</a></li>
+                        <li><a href="#indemnification">Indemnification</a></li>
+                        <li><a href="#termination">Termination</a></li>
+                        <li><a href="#governing-law">Governing Law</a></li>
+                        <li><a href="#changes">Changes to Terms</a></li>
+                        <li><a href="#contact-us">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="terms-main">
+                <div class="terms-card">
+                    <div class="terms-section" id="acceptance">
+                        <h2>1. Acceptance of Terms</h2>
+                        <p>By accessing or using the Cognitifly website, mobile applications, or any other services provided by Cognitifly LLC (collectively, the "Services"), you agree to be bound by these Terms of Use ("Terms"). These Terms constitute a legally binding agreement between you and Cognitifly LLC ("Cognitifly," "we," "us," or "our").</p>
+                        <p>If you do not agree with any part of these Terms, you must not access or use our Services.</p>
+                        
+                        <div class="highlight-box">
+                            <p>Please note that these Terms contain important information about your legal rights, remedies, and obligations. By using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
+                        </div>
+                    </div>
+
+                    <div class="terms-section" id="definitions">
+                        <h2>2. Definitions</h2>
+                        <p>Throughout these Terms, the following definitions apply:</p>
+                        <ul>
+                            <li><strong>"Content"</strong> refers to all text, images, videos, audio, data, information, and other materials available on or through our Services.</li>
+                            <li><strong>"User"</strong> refers to any individual or entity that accesses or uses our Services.</li>
+                            <li><strong>"User Content"</strong> refers to any content that Users upload, share, or otherwise provide to or through our Services.</li>
+                            <li><strong>"eBooks"</strong> refers to digital books and other digital content available for purchase through our Services.</li>
+                            <li><strong>"Intellectual Property Rights"</strong> refers to all rights in patents, copyrights, trademarks, trade secrets, and other intellectual property rights.</li>
+                        </ul>
+                    </div>
+
+                    <div class="terms-section" id="eligibility">
+                        <h2>3. Eligibility</h2>
+                        <p>To use our Services, you must be at least 18 years old or the age of majority in your jurisdiction, whichever is higher. By using our Services, you represent and warrant that you meet these eligibility requirements.</p>
+                        <p>If you are using our Services on behalf of a company, organization, or other entity, you represent and warrant that you have the authority to bind that entity to these Terms.</p>
+                    </div>
+
+                    <div class="terms-section" id="account">
+                        <h2>4. Account Registration</h2>
+                        <p>While you may browse our website without registering for an account, certain features and services, including purchasing eBooks, may require you to create an account.</p>
+                        <p>When creating an account, you agree to provide accurate, current, and complete information. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account or any other breach of security.</p>
+                        <p>We reserve the right to disable any user account at any time if, in our opinion, you have failed to comply with these Terms or if we suspect fraudulent or abusive activity.</p>
+                    </div>
+
+                    <div class="terms-section" id="products">
+                        <h2>5. Products & Services</h2>
+                        <h3>5.1 eBooks and Digital Content</h3>
+                        <p>Cognitifly offers various eBooks and digital content for purchase. We strive to provide accurate descriptions of our products, but we do not warrant that product descriptions or other content on our Services are accurate, complete, reliable, current, or error-free.</p>
+                        
+                        <h3>5.2 License to Digital Content</h3>
+                        <p>When you purchase an eBook or other digital content from us, we grant you a non-exclusive, non-transferable, revocable license to access and use the digital content for your personal, non-commercial use only. This license does not transfer ownership of the digital content to you.</p>
+                        
+                        <h3>5.3 Restrictions</h3>
+                        <p>You may not:</p>
+                        <ul>
+                            <li>Copy, reproduce, distribute, publish, transmit, modify, adapt, translate, create derivative works from, or otherwise exploit any digital content without our prior written consent</li>
+                            <li>Sell, rent, lease, or sublicense any digital content</li>
+                            <li>Circumvent, disable, or otherwise interfere with security-related features of our Services or digital content</li>
+                            <li>Remove, alter, or obscure any proprietary notices (including copyright notices) on any digital content</li>
+                        </ul>
+                    </div>
+
+                    <div class="terms-section" id="purchases">
+                        <h2>6. Purchases & Payments</h2>
+                        <h3>6.1 Pricing and Availability</h3>
+                        <p>All prices are shown in the applicable currency and do not include taxes unless stated otherwise. We reserve the right to change prices and availability of products at any time without notice.</p>
+                        
+                        <h3>6.2 Payment Methods</h3>
+                        <p>We accept various payment methods as indicated on our website. By providing a payment method, you represent and warrant that you are authorized to use the designated payment method and that the payment information you provide is true and accurate.</p>
+                        
+                        <h3>6.3 Billing</h3>
+                        <p>If your payment cannot be processed, we reserve the right to cancel your order. You agree to pay all charges incurred by you or on your behalf through our Services at the prices in effect when such charges are incurred.</p>
+                        
+                        <h3>6.4 Refunds</h3>
+                        <p>Our refund policy for digital products is as follows:</p>
+                        <ul>
+                            <li>Due to the nature of digital products, all sales of eBooks and other digital content are final and non-refundable unless required by applicable law.</li>
+                            <li>If you encounter issues with your purchased digital content, please contact our customer service team at help@cognitifly.com for assistance.</li>
+                        </ul>
+                        <p>For non-digital (printed) products, refunds may be available under our return policy. Please contact help@cognitifly.com for more information.</p>
+                        
+                        <h3>6.5 Monthly Giveaway</h3>
+                        <p>Our monthly giveaway is subject to additional terms and conditions, which will be provided when you enter the giveaway. By participating in our monthly giveaway, you agree to be bound by those additional terms and conditions.</p>
+                    </div>
+
+                    <div class="terms-section" id="intellectual">
+                        <h2>7. Intellectual Property</h2>
+                        <h3>7.1 Our Intellectual Property</h3>
+                        <p>Our Services and all content, features, and functionality thereof, including but not limited to all information, software, text, displays, images, video, and audio, and the design, selection, and arrangement thereof, are owned by Cognitifly, our licensors, or other providers of such material and are protected by copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
+                        
+                        <h3>7.2 Limited License to Users</h3>
+                        <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, and revocable license to access and use our Services for your personal, non-commercial use only.</p>
+                        
+                        <h3>7.3 Restrictions</h3>
+                        <p>You may not:</p>
+                        <ul>
+                            <li>Use our Services or Content in any way that violates any applicable law or regulation</li>
+                            <li>Copy, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of our Content, except as explicitly allowed by these Terms</li>
+                            <li>Use any data mining, robots, or similar data gathering or extraction methods on our Services</li>
+                            <li>Delete or alter any copyright, trademark, or other proprietary rights notices from our Content</li>
+                        </ul>
+                    </div>
+
+                    <div class="terms-section" id="privacy">
+                        <h2>8. Privacy Policy</h2>
+                        <p>Your privacy is important to us. Our Privacy Policy, which is incorporated into these Terms by reference, explains how we collect, use, disclose, and safeguard your information when you use our Services. By using our Services, you agree to the collection and use of information in accordance with our Privacy Policy.</p>
+                    </div>
+
+                    <div class="terms-section" id="user-content">
+                        <h2>9. User Content</h2>
+                        <h3>9.1 Responsibility for User Content</h3>
+                        <p>You are solely responsible for any User Content you post, upload, or otherwise make available through our Services. By providing User Content, you represent and warrant that:</p>
+                        <ul>
+                            <li>You own or control all rights to your User Content or have the right to grant the license provided in these Terms</li>
+                            <li>Your User Content does not violate these Terms or any applicable law or regulation</li>
+                            <li>Your User Content is accurate and not misleading or deceptive</li>
+                        </ul>
+                        
+                        <h3>9.2 License to User Content</h3>
+                        <p>By posting User Content, you grant us a worldwide, non-exclusive, royalty-free, perpetual, irrevocable, and fully sublicensable right to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display such User Content throughout the world in any media.</p>
+                        
+                        <h3>9.3 Monitoring and Removal</h3>
+                        <p>We have the right, but not the obligation, to monitor, edit, or remove any User Content. We also have the right to disclose your identity or other information about you to any third party who claims that material posted by you violates their rights, including their intellectual property rights or their right to privacy.</p>
+                    </div>
+
+                    <div class="terms-section" id="prohibited">
+                        <h2>10. Prohibited Activities</h2>
+                        <p>You agree not to engage in any of the following prohibited activities:</p>
+                        <ul>
+                            <li>Using our Services for any illegal purpose or in violation of any local, state, national, or international law</li>
+                            <li>Violating or infringing upon the rights of others, including their intellectual property rights</li>
+                            <li>Engaging in any activity that disrupts, diminishes the quality of, interferes with the performance of, or impairs the functionality of our Services</li>
+                            <li>Attempting to bypass any measures of our Services designed to prevent or restrict access to our Services or any portion thereof</li>
+                            <li>Deceptively impersonating any person or entity or misrepresenting your affiliation with any person or entity</li>
+                            <li>Harassing, threatening, intimidating, or engaging in any other predatory behavior towards other users or our staff</li>
+                            <li>Collecting or harvesting any information from our Services, including user account information, without permission</li>
+                            <li>Using any automated system, including "robots," "spiders," or "offline readers," to access our Services</li>
+                        </ul>
+                    </div>
+
+                    <div class="terms-section" id="disclaimer">
+                        <h2>11. Disclaimers</h2>
+                        <p>YOUR USE OF OUR SERVICES IS AT YOUR SOLE RISK. OUR SERVICES AND CONTENT ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR COURSE OF PERFORMANCE.</p>
+                        <p>COGNITIFLY, ITS SUBSIDIARIES, AFFILIATES, AND LICENSORS DO NOT WARRANT THAT:</p>
+                        <ul>
+                            <li>OUR SERVICES WILL FUNCTION UNINTERRUPTED, SECURE, OR AVAILABLE AT ANY PARTICULAR TIME OR LOCATION</li>
+                            <li>ANY ERRORS OR DEFECTS WILL BE CORRECTED</li>
+                            <li>OUR SERVICES ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS</li>
+                            <li>THE RESULTS OF USING OUR SERVICES WILL MEET YOUR REQUIREMENTS</li>
+                        </ul>
+                        <p>SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES. ACCORDINGLY, SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU.</p>
+                    </div>
+
+                    <div class="terms-section" id="limitation">
+                        <h2>12. Limitation of Liability</h2>
+                        <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL COGNITIFLY, ITS AFFILIATES, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATING TO YOUR USE OF, OR INABILITY TO USE, OUR SERVICES.</p>
+                        <p>IN NO EVENT WILL OUR AGGREGATE LIABILITY TO YOU OR ANY THIRD PARTY ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR FROM THE USE OF OR INABILITY TO USE OUR SERVICES EXCEED THE AMOUNTS YOU HAVE PAID TO COGNITIFLY FOR THE USE OF OUR SERVICES OR ONE HUNDRED DOLLARS ($100) IF YOU HAVE NOT HAD ANY PAYMENT OBLIGATIONS TO COGNITIFLY, AS APPLICABLE.</p>
+                    </div>
+
+                    <div class="terms-section" id="indemnification">
+                        <h2>13. Indemnification</h2>
+                        <p>You agree to indemnify, defend, and hold harmless Cognitifly and its affiliates, officers, directors, employees, agents, and licensors from and against any and all claims, liabilities, damages, losses, costs, expenses, or fees (including reasonable attorneys' fees) that arise from or relate to:</p>
+                        <ul>
+                            <li>Your violation of these Terms</li>
+                            <li>Your User Content</li>
+                            <li>Your violation of any rights of another person or entity</li>
+                            <li>Your violation of any applicable laws, rules, or regulations</li>
+                        </ul>
+                        <p>We reserve the right, at our own expense, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you, in which event you will cooperate with us in asserting any available defenses.</p>
+                    </div>
+
+        
+
+                            <div class="terms-section" id="termination">
+                                <h2>14. Termination</h2>
+                                <p>We may terminate or suspend your access to our Services immediately, without prior notice or liability, for any reason whatsoever, including, without limitation, if you breach these Terms.</p>
+                                <p>Upon termination, your right to use our Services will immediately cease. All provisions of these Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+                                <p>If your account is terminated for any reason, you may lose access to any content, including purchased eBooks, that you have stored or accessed through our Services. We are not responsible for any loss of data or content as a result of termination.</p>
+                            </div>
+                            
+                            <div class="terms-section" id="governing-law">
+                                <h2>15. Governing Law</h2>
+                                <p>These Terms shall be governed by and construed in accordance with the laws of New South Wales, Australia, without regard to its conflict of law provisions.</p>
+                                <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.</p>
+                                
+                                <h3>15.1 Dispute Resolution</h3>
+                                <p>Any disputes arising out of or relating to these Terms or our Services shall be resolved through binding arbitration in accordance with the commercial arbitration rules of the Australian Centre for International Commercial Arbitration. The arbitration shall be conducted in Sydney, Australia, in the English language.</p>
+                                
+                                <h3>15.2 Class Action Waiver</h3>
+                                <p>Any proceedings to resolve or litigate any dispute in any forum will be conducted solely on an individual basis. Neither you nor we will seek to have any dispute heard as a class action or in any other proceeding in which either party acts or proposes to act in a representative capacity.</p>
+                                
+                                <h3>15.3 Limitation on Time to File Claims</h3>
+                                <p>ANY CAUSE OF ACTION OR CLAIM YOU MAY HAVE ARISING OUT OF OR RELATING TO THESE TERMS OR OUR SERVICES MUST BE COMMENCED WITHIN ONE (1) YEAR AFTER THE CAUSE OF ACTION ACCRUES, OTHERWISE, SUCH CAUSE OF ACTION OR CLAIM IS PERMANENTLY BARRED.</p>
+                            </div>
+                            
+                            <div class="terms-section" id="changes">
+                                <h2>16. Changes to Terms</h2>
+                                <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                                <p>By continuing to access or use our Services after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use our Services.</p>
+                            </div>
+                            
+                            <div class="terms-section" id="contact-us">
+                                <h2>17. Contact Us</h2>
+                                <p>If you have any questions about these Terms, please contact us at:</p>
+                                <p>
+                                    Cognitifly LLC<br>
+                                    Level 6/180 Thomas St,<br>
+                                    Sydney NSW 2000,<br>
+                                    Australia
+                                </p>
+                                <p>Email: help@cognitifly.com</p>
+                                <p>Phone: +61 1300 651 415</p>
+                            </div>
+                            
+                            <div class="terms-meta">
+                                <div class="terms-date">Effective Date: March 19, 2025</div>
+                                <div class="terms-print">
+                                    <a href="javascript:window.print()">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6 19H3C2.44772 19 2 18.5523 2 18V8C2 7.44772 2.44772 7 3 7H21C21.5523 7 22 7.44772 22 8V18C22 18.5523 21.5523 19 21 19H18M6 19V14H18V19M6 19H18M8 7V3H16V7" stroke="#17ef97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Print Terms
+                                    </a>
+                                </div>
+                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            
+                                <div class="cta-container">
+                                    <a href="../index.html" class="cta-btn">Back to Home</a>
+                                </div>
+                            
+                                <!-- Footer -->
+                                <footer>
+                                    <div class="footer-top">
+                                        <div class="footer-brand">
+                                            <div class="logo footer-logo"><a href="#">cogniti<span class="highlight">fly</span></a></div>
+                                            <p>Subscribe to our newsletter and receive news and special discounts!</p>
+                            
+                            
+                                            <form action="https://formspree.io/f/mldjjeld" method="POST" class="newsletter-form">
+                                                <input type="email" name="email" placeholder="Enter Email Address..." required>
+                                                <button type="submit">Submit</button>
+                                            </form>
+                            
+                            
+                                            <div class="social-icons">
+                                                <a href="https://www.facebook.com/HarperCollins/"><img src="../media/logos/facebook.svg" alt="Facebook"></a>
+                                                <a href="https://x.com/harpercollins"><img src="../media/logos/x.svg" alt="X"></a>
+                                                <a href="https://www.instagram.com/HarperCollins/"><img src="../media/logos/instagram.svg" alt="Instagram"></a>
+                                                <a href="https://www.tiktok.com/@harpercollins"><img src="../media/logos/tiktok.svg" alt="TikTok"></a>
+                                            </div>
+                                        </div>
+                                        <div class="footer-links">
+                                            <div class="footer-column">
+                                                <h3>Categories</h3>
+                                                <a href="../index.html#ebooks">Library</a>
+                                                <a href="../index.html#ebooks">Collections</a>
+                                                <a href="authors.html">Authors</a>
+                                                <!-- <a href="#ebooks">Art</a> -->
+                                            </div>
+                                            <div class="footer-column">
+                                                <h3>Resources</h3>
+                                                <a href="contact.html">Help Center</a>
+                                                <!-- <a href="#">Site Status</a> -->
+                                                <a href="contact.html">Billing</a>
+                                                <a href="guides.html">Guides</a>
+                                                <!-- <a href="#">Blog</a> -->
+                                            </div>
+                                            <div class="footer-column">
+                                                <h3>Company</h3>
+                                                <a href="about-us.html">About Us</a>
+                                                <a href="jobs.html">Careers</a>
+                                                <a href="contact.html">Affiliate Program</a>
+                                                
+                                            </div>
+                                            <div class="footer-column">
+                                                <h3>Preferences</h3>
+                                                <a href="terms-of-use.html">Terms of Use</a>
+                                                <a href="privacy-policy.html">Privacy Policy</a>
+                                                <!-- <a href="#ebooks">Bookmarks</a> -->
+                                                <!-- <a href="#ebooks">Watchlist</a> -->
+                                                <!-- <a href="#ebooks">My Collections</a> -->
+                                                <a href="contact.html">FAQ</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="footer-bottom">
+                                        <p>help@cognitifly.com</p>
+                                        <p>&copy; 2025 Cognitifly LLC. All rights reserved.</p>
+                                        <p>A HarperCollins Company</p>
+                                        <div class="footer-bottom-links">
+                                            <a href="terms-of-use.html">Terms of Use</a>
+                                            <a href="privacy-policy.html">Privacy Policy</a>
+                                        </div>
+                                    </div>
+                                </footer>
+                            
+                                <script>
+                                // Hamburger menu toggle
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const hamburger = document.querySelector('.hamburger');
+                                    const navMenu = document.querySelector('.nav-menu');
+                            
+                                    hamburger.addEventListener('click', () => {
+                                        navMenu.classList.toggle('active');
+                                    });
+                                });
+                                </script>
+                            </body>
+                            </html>

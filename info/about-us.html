@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Cognitifly</title>
+    <link rel="icon" href="../media/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: #000;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    /* Header and Navbar */
+    header {
+        background: #000;
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .logo .highlight {
+        color: #17ef97;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .nav-menu a:hover {
+        color: #17ef97;
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* About Hero Section */
+    .about-hero {
+        padding: 10rem 2rem 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .about-hero h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-hero span.highlight {
+        color: #17ef97;
+    }
+
+    .about-hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        color: #f0f0f0;
+    }
+
+    /* Mission Section */
+    .mission-section {
+        padding: 4rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .mission-text {
+        flex: 1;
+    }
+
+    .mission-text h2 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .mission-text h2::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 80px;
+        height: 3px;
+        background: #17ef97;
+    }
+
+    .mission-text p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #e0e0e0;
+    }
+
+    .mission-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mission-image img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .mission-image:hover img {
+        transform: scale(1.03);
+    }
+
+    /* Stats Section */
+    .stats-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('stats-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .stats-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    .stat-card {
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-10px);
+        border-color: #17ef97;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #17ef97;
+        margin-bottom: 1rem;
+    }
+
+    .stat-label {
+        font-size: 1.1rem;
+        color: #e0e0e0;
+    }
+
+    /* Values Section */
+    .values-section {
+        padding: 6rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .values-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .values-header h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .values-header p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        color: #e0e0e0;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .value-card {
+        background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+        border-radius: 15px;
+        padding: 2.5rem;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #222;
+        height: 100%;
+    }
+
+    .value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(23, 239, 151, 0.1);
+        border-color: #17ef97;
+    }
+
+    .value-icon {
+        background: rgba(23, 239, 151, 0.1);
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .value-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .value-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+
+    .value-card p {
+        color: #e0e0e0;
+    }
+
+    /* Team Section */
+    .team-section {
+        padding: 6rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .team-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .team-header h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .team-header p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        color: #e0e0e0;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .team-card {
+        background: #111;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(23, 239, 151, 0.1);
+    }
+
+    .team-image {
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .team-card:hover .team-image img {
+        transform: scale(1.05);
+    }
+
+    .team-info {
+        padding: 1.5rem;
+    }
+
+    .team-info h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .team-info span {
+        color: #17ef97;
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .team-info p {
+        color: #e0e0e0;
+        font-size: 0.95rem;
+    }
+
+    .team-social {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .team-social a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        background: #222;
+        border-radius: 50%;
+        transition: background 0.3s ease;
+    }
+
+    .team-social a:hover {
+        background: #17ef97;
+    }
+
+    .team-social img {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Timeline Section */
+    .timeline-section {
+        padding: 6rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .timeline-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .timeline-header h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .timeline-header p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        color: #e0e0e0;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background-color: #333;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+    }
+
+    .timeline-item {
+        padding: 0 2rem 2rem;
+        position: relative;
+        width: 50%;
+    }
+
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #17ef97;
+        border-radius: 50%;
+        top: 0;
+        right: -10px;
+        z-index: 1;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 50%;
+    }
+
+    .timeline-item:nth-child(even)::after {
+        left: -10px;
+    }
+
+    .timeline-content {
+        background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+        border-radius: 15px;
+        padding: 1.5rem;
+        position: relative;
+        border: 1px solid #222;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(23, 239, 151, 0.1);
+        border-color: #17ef97;
+    }
+
+    .timeline-year {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        background: rgba(23, 239, 151, 0.1);
+        color: #17ef97;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .timeline-content h3 {
+        margin-bottom: 0.8rem;
+        font-size: 1.3rem;
+    }
+
+    .timeline-content p {
+        color: #e0e0e0;
+        font-size: 0.95rem;
+    }
+
+    /* Call to Action Section */
+    .cta-section {
+        padding: 6rem 2rem;
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('cta-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+    }
+
+    .cta-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .cta-container h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-container p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #e0e0e0;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        padding: 0.9rem 2.2rem;
+        background: #17ef97;
+        color: #000;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: transform 0.3s ease;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .cta-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .cta-btn.secondary {
+        background: transparent;
+        border: 2px solid #17ef97;
+        color: #17ef97;
+    }
+
+    /* Footer */
+    footer {
+        padding: 4rem 2rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .footer-logo a {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .footer-brand p {
+        color: #e0e0e0;
+        margin-bottom: 1.5rem;
+        max-width: 350px;
+        font-size: 1rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem 1.2rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 25px 0 0 25px;
+    }
+
+    .newsletter-form button {
+        padding: 0.8rem 1.5rem;
+        background: #17ef97;
+        color: #000;
+        border: none;
+        border-radius: 0 25px 25px 0;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-3px);
+        background-color: #f5f5f5;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        flex: 2;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .footer-column h3 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-column a {
+        color: #999;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.8rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+        color: #17ef97;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        border-top: 1px solid #333;
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+        color: #17ef97;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 992px) {
+        .mission-section {
+            flex-direction: column;
+        }
+
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .values-grid, .team-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .timeline::after {
+            left: 31px;
+        }
+
+        .timeline-item {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+
+        .timeline-item::after {
+            left: 21px;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #000;
+            padding: 1rem;
+            flex-direction: column;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .stats-grid, .values-grid, .team-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-top {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-brand {
+            width: 100%;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .footer-column {
+            width: 100%;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            text-align: center;
+        }
+        
+        .footer-bottom-links {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    </style>
+
+<script type="text/javascript">
+    window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
+    heap.load("3034367105");
+  </script>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="https://www.cognitifly.com">cogniti<span class="highlight">fly</span></a></div>
+            <div class="hamburger">☰</div>
+            <div class="nav-menu">
+                <a href="https://www.cognitifly.com">Home</a>
+                <a href="../index.html#ebooks">Books</a>
+                <a href="about-us.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <h1>About <span class="highlight">Us</span></h1>
+        <p>We are on a mission to transform lives through powerful knowledge and practical techniques that help you become the most magnetic, confident, and influential version of yourself.</p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="mission-text">
+            <h2>Our Mission</h2>
+            <p>At Cognitifly, we believe that personal magnetism and social intelligence are skills that can be learned and mastered. Our purpose is to empower individuals with the knowledge and techniques to overcome social barriers, build meaningful connections, and achieve their full potential in both personal and professional relationships.</p>
+            <p>Founded in 2019, Cognitifly has grown from a small digital publishing startup to a global leader in personal development literature. We specialize in evidence-based approaches to social dynamics, persuasion, charisma, and self-improvement that are ethical, practical, and effective.</p>
+            <p>Our carefully curated collection of eBooks covers everything from overcoming social anxiety and shyness to mastering the art of conversation, building genuine confidence, and developing an irresistible presence that attracts opportunities and meaningful connections.</p>
+        </div>
+        <div class="mission-image">
+            <img src="../media/general/about-mission.svg" alt="Our Mission">
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">280K+</div>
+                    <div class="stat-label">Readers Worldwide</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Published Books</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">80+</div>
+                    <div class="stat-label">Authors & Employees</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$340K+</div>
+                    <div class="stat-label">Paid to Affiliates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="values-header">
+            <h2>Our <span class="highlight">Values</span></h2>
+            <p>These core principles guide everything we do at Cognitifly, from the content we create to how we interact with our community.</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <img src="../media/icons/value-icon-1.png" alt="Integrity">
+                </div>
+                <h3>Ethical Approach</h3>
+                <p>We believe in teaching techniques that foster genuine connections and mutual benefit. Our methods are designed to help you become authentically magnetic and attractive.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <img src="../media/icons/value-icon-2.png" alt="Evidence-Based">
+                </div>
+                <h3>Evidence-Based</h3>
+                <p>Our content combines cutting-edge research from psychology, neuroscience, and behavioral economics with practical, field-tested techniques that produce real results.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <img src="../media/icons/value-icon-3.png" alt="Accessibility">
+                </div>
+                <h3>Accessibility</h3>
+                <p>We believe personal growth should be available to everyone. We present complex concepts in clear, actionable steps that anyone can implement regardless of background or experience level.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <img src="../media/icons/value-icon-4.png" alt="Continuous Improvement">
+                </div>
+                <h3>Continuous Improvement</h3>
+                <p>We are constantly refining our content based on new research, user feedback, and evolving social dynamics to ensure our readers have access to the most effective methods.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <img src="../media/icons/value-icon-5.png" alt="Community">
+                </div>
+                <h3>Community Support</h3>
+                <p>We foster a supportive community where readers can learn from each other's experiences, share successes, and find encouragement during their personal development journey.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <img src="../media/icons/value-icon-6.png" alt="Results-Focused">
+                </div>
+                <h3>Results-Focused</h3>
+                <p>We measure our success by your transformation. Our content is designed to deliver tangible improvements in your social and professional interactions, not just theoretical knowledge.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+
+    <!-- <section class="team-section">
+        <div class="team-header">
+            <h2>Meet Our <span class="highlight">Team</span></h2>
+            <p>Our diverse team of experts combines academic knowledge with real-world experience to create content that truly transforms lives.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="team-1.jpg" alt="Sarah Johnson">
+                </div>
+                <div class="team-info">
+                    <h3>Sarah Johnson</h3>
+                    <span>Founder & CEO</span>
+                    <p>With a background in psychology and years of experience in social dynamics coaching, Sarah founded Cognitifly with the vision of making social intelligence accessible to everyone.</p>
+                    <div class="team-social">
+                        <a href="#"><img src="linkedin.svg" alt="LinkedIn"></a>
+                        <a href="#"><img src="x.svg" alt="X"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="team-2.jpg" alt="Michael Rodriguez">
+                </div>
+                <div class="team-info">
+                    <h3>Michael Rodriguez</h3>
+                    <span>Director of Content</span>
+                    <p>A former clinical psychologist specializing in social anxiety, Michael oversees our content development to ensure it's both scientifically sound and practically useful.</p>
+                    <div class="team-social">
+                        <a href="#"><img src="linkedin.svg" alt="LinkedIn"></a>
+                        <a href="#"><img src="x.svg" alt="X"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="team-3.jpg" alt="Aisha Patel">
+                </div>
+                <div class="team-info">
+                    <h3>Aisha Patel</h3>
+                    <span>Lead Researcher</span>
+                    <p>With a PhD in Behavioral Psychology, Aisha ensures that all our techniques and recommendations are backed by the latest scientific research and ethical standards.</p>
+                    <div class="team-social">
+                        <a href="#"><img src="linkedin.svg" alt="LinkedIn"></a>
+                        <a href="#"><img src="x.svg" alt="X"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="timeline-header">
+            <h2>Our <span class="highlight">Journey</span></h2>
+            <p>From a simple idea to a global movement, here's how Cognitifly has evolved over the years.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2019</div>
+                    <h3>The Beginning</h3>
+                    <p>Cognitifly was founded with a vision to transform how people approach social skills and personal magnetism, launching with just three eBooks.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2020</div>
+                    <h3>Digital Expansion</h3>
+                    <p>We expanded our library to 12 titles and launched our first affiliate program, reaching readers in over 50 countries.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2021</div>
+                    <h3>Growing Community</h3>
+                    <p>Our reader community grew to over 100,000 members, and we published our bestselling title "Cognitive Manipulation to Attract Anyone."</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2022</div>
+                    <h3>Research Partnership</h3>
+                    <p>We established partnerships with psychology researchers to develop more evidence-based approaches to social skills development and personal magnetism.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2023</div>
+                    <h3>Global Recognition</h3>
+                    <p>Cognitifly reached over 200,000 readers worldwide and was recognized as a leading publisher in the personal development space.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2024</div>
+                    <h3>HarperCollins Partnership</h3>
+                    <p>We joined the HarperCollins family, expanding our resources and reach while maintaining our core mission and independent creative direction.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2025</div>
+                    <h3>Looking Forward</h3>
+                    <p>With a growing library of 30+ titles and 280,000+ readers, we continue our mission to help people worldwide master the art of personal magnetism and social influence.</p>
+                </div>
+            </div>
+            </div>
+            </section>
+            
+            <!-- Call to Action Section -->
+            <section class="cta-section">
+                <div class="cta-container">
+                    <h2>Ready to Transform Your <span class="highlight">Social Life</span>?</h2>
+                    <p>Discover our collection of life-changing eBooks and start your journey to becoming more magnetic, influential, and confident today.</p>
+                    <div class="cta-buttons">
+                        <a href="../index.html#ebooks" class="cta-btn">Explore eBooks</a>
+                        <a href="contact.html" class="cta-btn secondary">Contact Us</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer>
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <div class="logo footer-logo"><a href="#">cogniti<span class="highlight">fly</span></a></div>
+                        <p>Subscribe to our newsletter and receive news and special discounts!</p>
+
+                        <form action="https://formspree.io/f/mldjjeld" method="POST" class="newsletter-form">
+                            <input type="email" name="email" placeholder="Enter Email Address..." required>
+                            <button type="submit">Submit</button>
+                        </form>
+
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/HarperCollins/"><img src="../media/logos/facebook.svg" alt="Facebook"></a>
+                            <a href="https://x.com/harpercollins"><img src="../media/logos/x.svg" alt="X"></a>
+                            <a href="https://www.instagram.com/HarperCollins/"><img src="../media/logos/instagram.svg" alt="Instagram"></a>
+                            <a href="https://www.tiktok.com/@harpercollins"><img src="../media/logos/tiktok.svg" alt="TikTok"></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h3>Categories</h3>
+                            <a href="../index.html#ebooks">Library</a>
+                            <a href="../index.html#ebooks">Collections</a>
+                            <a href="authors.html">Authors</a>
+                            <!-- <a href="#ebooks">Art</a> -->
+                        </div>
+                        <div class="footer-column">
+                            <h3>Resources</h3>
+                            <a href="contact.html">Help Center</a>
+                            <!-- <a href="#">Site Status</a> -->
+                            <a href="contact.html">Billing</a>
+                            <a href="guides.html">Guides</a>
+                            <!-- <a href="#">Blog</a> -->
+                        </div>
+                        <div class="footer-column">
+                            <h3>Company</h3>
+                            <a href="about-us.html">About Us</a>
+                            <a href="jobs.html">Careers</a>
+                            <a href="contact.html">Affiliate Program</a>
+                            
+                        </div>
+                        <div class="footer-column">
+                            <h3>Preferences</h3>
+                            <a href="terms-of-use.html">Terms of Use</a>
+                            <a href="privacy-policy.html">Privacy Policy</a>
+                            <!-- <a href="#ebooks">Bookmarks</a> -->
+                            <!-- <a href="#ebooks">Watchlist</a> -->
+                            <!-- <a href="#ebooks">My Collections</a> -->
+                            <a href="contact.html">FAQ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>help@cognitifly.com</p>
+                    <p>&copy; 2025 Cognitifly LLC. All rights reserved.</p>
+                    <p>A HarperCollins Company</p>
+                    <div class="footer-bottom-links">
+                        <a href="terms-of-use.html">Terms of Use</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                    </div>
+                </div>
+            </footer>
+            
+            <script>
+            // Hamburger menu toggle
+            document.addEventListener('DOMContentLoaded', function() {
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('.nav-menu');
+            
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            });
+            </script>
+            </body>
+            </html>
